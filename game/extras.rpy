@@ -1403,7 +1403,8 @@ label nh3:
     show natsuki cm 
     "The two of us proceed to walk to school in silence."
     stop music fadeout .5
-
+    return 
+label trip:
     scene bg club_day with wipeleft_scene 
 
     play music t5 
@@ -1956,6 +1957,359 @@ label nfd:
     #Epic credit sequence, coupled with epic soundtrack
     return 
   
+label sroute1:
+    Script:
+label ss1:
+     "I decide to go see what Sayori is up to."
+     "It appears she's currently \'Uwaa~\'-ing in a loop."
+     #monika pops up and fixes this
+     s "Oh hey [player], whats up?"
+     mc "Not much, just wanted to see what you were up to." 
+     # mc "My homeslice."
+     s "Oh I'm just… I forgot."
+    "How did she-"
+    "Right. Cliche mod."
+mc "Well, how are you feeling?"
+#weather report bg
+#the news theme from undertale bc why not
+"Where is this going?"
+s "Well I'm glad you asked!"
+s "I'm weatherette Sayori with channel 9 news."
+mc "There is no way that's a real term."
+#upset sayori
+pause 0.5
+mc "Okay, okay… fine."
+#maybe have it fade into a greenscreen
+s "Partly cloudy."
+"huh."
+s "Anyways, can you buy me a cookie?"
+mc "Uh… Sure."
+#s "Yes! Poggers!"
+s "Yay! Thanks [player]!"
+"Sayori jumps up and down as she wraps her arms around me in a bear hug."
+mc "Alright, alright."
+s "Ehehehehehehehehehhehehe sorry~"
+"We step out of the clubroom and are greeted by a vending machine."
+mc "Hold on, why is that there?" 
+s "I dunno."
+"Sayori shrugs." 
+"Could it be…?"
+#"N-Nani?!" 
+m "Sorry, guys!" 
+"I hear a distant shout from the clubroom."
+pause .5
+m "...And there!"
+#vending machine disappears
+s "Where'd it go?"
+s "I wanted a cookie…"
+"Suddenly, the vending machine reappears against the wall."
+s "Huh?"
+"Without questioning it, I slide an unnamed currency into the slot."
+"Is it Yen? Is it Dollars? Maybe one of those 'Quids'?" 
+#fokin ell geeza
+"Guess we'll never know." 
+#ye ma e
+ #RULE BRITANNIA BRITANNIA RULE THE WAVES 
+#riding round in a rover if i see opps in his over ill send man straigh to jehovah when i take shots like like em sharapova doing up tennis call man dennis im a menace doin up olives in venus big man ting im bigger than benis stop it otherwise unknown p might bash mans head straight down like a bopit so make like a freddo and hoppit your girl is 4 foot four and got bare hair on her toes like a hobbit when i see in the club im doing up aj
+"Sayori's eyes widen as I conjure up a chocolate chip cookie." 
+#the coupe is retarded
+mc "'Tis magic, my dear."
+s "It's beautiful…"
+mc "Alright then." 
+pause 1
+mc "Alright, you ready to walk home?"
+s "Sure."
+scene bg residential_day with wipeleft_scene 
+"Sayori and I walk home." 
+"I get the urge to ask about her \'Uwaa-ing\' earlier, but I don't want to come off as intrusive." 
+"Instead, I decide to ask about her day." 
+mc "So.. How was your day?" 
+s "61 degrees."
+mc "Fahrenheit or celsius?"
+s "Eh, I dunno."
+mc "Alright then."
+"We end up walking home in a calm silence."
+"Eventually we say our goodbyes, and enter our respective houses." 
+s "See ya, [player]!" 
+mc "See you, Sayori." 
+# scene bg bedroom
+"Welp, nothing relevant to do at home yet. Guess it's time to go to sleep."
+scene black 
+pause 2 
+scene bg bedroom 
+"Ah, morning!"
+"Time to go see what Sayori is up to!"
+pause 1
+"...What's that?{w=.5} What about the club?"
+"That doesn't matter anymore, we only care about Sayori now!"
+#check for other routes finished
+"Maybe only because I already played another route, but who cares?"
+"I get out of bed and tactically roll down my stairs."
+scene bg kitchen 
+show sayori at face 
+s "HI [player!u]!!!"
+mc "Gah! What are you doing in my house?"
+s "I thought I would pay you a surprise visit! Just like when we were kids!"
+mc "Ah, okay, makes sense."
+mc "Hey, remember that one time we \[INSERT EVENT HERE\] when we were kids?"
+s "Oh yeah! I totally do!"
+mc "Fun times."
+mc "So, want to get food or something?"
+s "I love food!"
+#sayori spins and flings offscreen
+s "FOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO--"
+ "Guess I should follow her."
+scene bg restaurant with wipeleft_scene
+mc "So Sayori, how are you feeling today?"
+#yandere eyes
+s "I am entirely motivated by food."
+s "So I'm great!"
+mc "I'm glad to hear it."
+"A pause comes over us as neither of us can think of what to say."
+"But it isn't awkward really, the two of us are just enjoying each other's presence and munching on fries."
+"It's quite nice, just the two of us sitting across from each other, me and my cute food vacuum waifu."
+"{i}Bet that's a phrase you never expected to hear.{/i}"
+mc "Hey Sayori, this reminds me of all the times we went to this restaurant as kids."
+s "Oh yeah!"
+mc "I still don't understand how you managed to burn down a restaurant you didn't work at."
+mc "Hell, it only reopened last week!"
+s "Eh? Don't remind me, meanie!"
+mc "Alright, alright. I'm sorry."
+s "No worries, [player]."
+"Sayori killed twelve people that day."
+"I can still remember the screams reverberating throughout the smoldering Jack in the Box™."
+#Time skip
+mc "Man I'm stuffed, what about you Sayori?"
+s "My stomach is an abyss with infinite capacity for nutrients/"
+mc "Do you want me to like... buy you more fries?"
+s "It's fine. I'll be a-okay!"
+mc "If you say so."
+"It seems our lunch 'date' is coming to a close."
+"But there's still plenty of light out, so maybe we can find something else to do."
+mc "Hey Say, did you want to take a stop at the park on the way back?"
+s "That sounds like fun!"
+"With Sayori's approval, the two of us depart to go to the park."
+#park time
+#sayori is swinging on a swing super fucking fast
+s "Wheeeeeeeeeeeeeeeeeeeeee!"
+"Man, I didn't know I could swing a swing so fast."
+"Is this like... safe? I won't like, turn her into a pancake or something?"
+"Great. Now I'm hungry again."
+"No! I have to focus on not letting my dearest friend, no, the love of my life, die via a concoction of centripetal force and woodchips."
+"Alright, I've got a plan."
+mc "Yo Sayori, let go of the swing!"
+"I have to shout for my voice to reach her in the heavens."
+s "Okay!"
+"With no hesitation, she lets go and is sent hurtling towards the sun."
+#sky bg 
+"Just gotta line this up..."
+#slide whistle
+#fade to white
+#bg of the park burning down with child sayori sprite
+s "EVERYTHING WILL BURN."
+s "NOTHING IS FREE FROM THE HELL THAT I CAST UPON IT."
+s "YOU WILL ALL PERISH BENEATH ME."
+#fade to present time
+"I'm starting to think this may be a problem of hers."
+s "Thanks for catching me ehehehehehe~"
+mc "I guess you could say you've... fallen for me."
+s "I guess?"
+mc "What do you say we call it a day? I can only take one near death experience per park trip."
+s "Oh, like that time we met that weird football guy?"
+"I... don't know exactly what she's talking about, nor do I want to know."
+mc "Yeah, exactly like that."
+#residential night
+mc "So uh... see you tomorrow?"
+s "Yeah, I had a great time! It's been a while since we last hung out like this."
+s "When's the last time we spent time together outside of school anyways?"
+mc "Probably when you burned down that movie theatre."
+s "Oh I remember now!"
+mc "I remember all too well."
+s "hey, don't judge me! They undercooked my popcorn."
+mc "Ah, you and your food."
+s "Yeah, yeah, laugh it up."
+"A brief pause overcomes us as we take in the silence of our surroundings."
+s "Hey, [player], there's something you should know..."
+mc "Yeah, what is it?"
+#pause and zoom for 60 seconds
+#zoom out
+s "I love you."
+mc "Wait, what?"
+"I thought this was gonna be another pitch for her self defence noose or whatever."
+s "You heard me, meanie."
+mc "Uh, yeah, I did. You just caught me off guard."
+s "Are you really that surprised? I mean we've basically known each other our whole lives."
+mc "I guess it makes sense."
+mc "I uh... love you too?"
+s "R-really?"
+mc "Didn't you just say it wasn't surprising you had feelings for me? What makes it different the other way around?"
+s "Well, yeah, but, it's {i}me{/i} we're talking about, I haven't even seen another guy in my life, and there's {s}three{/s} two cute girls you can go for in the club, wouldn't you rather be with either of them?"
+mc "I love {i}you{/i}, Sayori. and I wouldn't have it any other way."
+#if they played another route
+"I also already went through another route, but who am I to rain on her parade."
+scene black
+"We then kiss or something."
+"It's pretty cool."
+#residential night
+s "So, now that you're my boyfriend..."
+s "You have to come help me make an ad for my self defence noose!"
+"I've been played."
+s "Chop chop, [player], I've got the video camera set up in my living room!"
+#fade to residential day
+
+s "HEEEEY!"
+mc "Oh hey Sayori, you're up early!"
+s "You noticed~"
+s "It sure is a sunny day!"
+"I look up."
+mc "Yeah, it sure is."
+s "I meant more metaphorically, but yeah."
+mc "Oh."
+mc "So, did you want to walk to school together?"
+s "Sure!"
+#fade to club I guess 
+#show sayori 
+s "Hey everyone, I have an announcement to make!"
+#show everyone else
+"All of the club members turn to address Sayori."
+s "I am depression!"
+#pause
+y "...Do you mean {i}have{/i} depression?"
+#zoom plus vignette focusing on sayori and Yuri
+s "DON"T RUIN THIS FOR ME, YURI."
+y "imsorry."#small text
+#effect ends abruptly
+m "{i}Ahem.{/i}{w} We're very proud of you for telling us and support you indefinitely."
+#s "Even if I burn things to cope with my sadness?"
+m "Yeah, sure, knock yourself out."
+mc "Don't encourage her Monika."
+s "The reckoning is nigh, [player]."
+s "The flames of cleansing will reach everyone indiscriminately."
+s "I will turn everything to ash."
+mc "Writers, a little help here?"
+scene black
+"Whew, thank god that scene's over."
+pause 2 
+#fade into picnic scene (already written in Nat route)
+
+#fade to res night
+mc "Boy, what a day that was."
+s "Say, it's late, and our parents are not only not home, but basically nonexistent."
+mc "Yeah?"
+s "Did you maybe wanna..."
+s "Buy a self defenc--{nw}"
+mc "Not interested."
+s "Meanie."
+s "In that case, I'm going to sleep."
+
+#fade into save the dokis scene (also from natsuki's scene but I'll have to write a few lines for Natsuki
+
+#residential day
+ "Ah, the weekend~"
+"It's a nice day out, couldn't have asked for any better."
+"Say, I wonder what Sayori is up to on this fine afternoon."
+scene black with wipeleft_scene
+pause 1.5
+"Uhh...{w=.5} Why is her house so dark?"
+"it made sense when it was nighttime, but it's the middle of the afternoon."
+"Does she just not have windows?"
+"Or maybe this is just some kind of time or budget constrai--"
+#screen glitches
+"Lets go see what Sayori is up to."
+"I gently open the door, not because I really care about being sensitive, but because it feels right."
+#sayori in suicide clothes with noose
+mc "Hey Sayori."
+"Her eyes light up when she sees me."
+s "Oh! Hiya [player]! It's great to see you."
+mc "Performing some R&D on your self-defence noose."
+s "You know it! Wanna help me test it?"
+mc "I'll pass, thank you very much."
+s "Welp, looks like it's up to me."
+#sayori slides over a little
+"Sayori begins fastening the rope to her ceiling."
+"She then grabs a chair and slides it underneath."
+"Hey, wait a minute..."
+"Sayori, you aren't going to try killing yourself, are you?"
+s "hehe, no silly~"
+s "It's not a matter of trying, I will succeed."
+"My heart rate accelerates."
+"Fuckfuckfuckfuck."
+"Sayori's life in danger right now."
+"What should I do?"
+choice between right and wrong
+
+right:
+
+s "Hey, could you step out for a second?"
+mc "When you're about to off yourself?"
+s "Well yeah, you don't want to see it happen, do you?"
+mc "I don't want it to happen in the first place!"
+s "Relax, once I'm gone, there's three other people you can talk to."
+s "Actually there's only two worth talking to, but that's being nitpicky."
+mc "But we all care about you, and I don't want to talk to any of them."
+mc "Hell, they're practically entirely ignored on this route."
+s "I guess you have a point."
+s "But I would've wasted so much time!"
+s "I made this whole business solely as a guise to hold onto a ton of nooses."
+"Wow, she's a lot more clever than I have her credit for."
+"Even if that's way darker than this mod should be."
+s "It would be such a drag to {i}not{/i} kill myself at this point."
+mc "Okay, first, wouldn't you be wasting more time by just not living?"
+mc "Second, we don't have to waste the nooses, we could build a massive corporate empire."
+mc "I'll help you sell all your nooses so you don't have to throw them out."
+"I sure hope people end up buying them because they're cheaper than rope and not because they come pre-tied."
+s "Alright, you've got a deal."
+s "Pleasure doing business with you."
+"Sayori steps down from her chair and embraces me."
+#scene black
+mc "So, are you feeling a little better now?"
+s "One hundred degrees."
+mc "Wait, were the degrees just percentages the whole time?"
+#roll credits
+
+wrong:
+
+s "Hey, could you step out for a second?"
+mc "Huh? Uh, yeah, sure."
+s "Great! Thanks."
+#close door
+s "Alright, now count to 30 and come back in."
+mc "Is this a game of hide and seek."
+s "Sure is."
+"I chuckle."
+"She really is childish. I mean, when was the last time we played hide and seek."
+"Better get to counting."
+#I'm literally just going to code a loop that counts to thirty.
+mc "Ready or not, here I come!"
+"I excitedly gently open the door."
+# s kill, shocker.
+#monika is behind the window, disappointed 
+"Oh wow, she killed herself."
+"I for one, am shocked."
+#to be continued in I gently open the door 2
+m "Seriously? You're using an ending to plug another one of your shitty projects?"
+#the splash text changes to respond
+"Fuck off, Monika."
+"Just let me have this."
+"My wife is leaving me, and she's taking the kids, is this too much to ask for?"
+m "Riiight, we both know you don't have a wife."
+"JUST LET ME HAVE THIS."
+m "...Fine."
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 label nextscene:
     pass

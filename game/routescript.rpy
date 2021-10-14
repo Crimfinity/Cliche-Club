@@ -10,6 +10,7 @@ label nroutestart:
     call nh1 
     call nh2 
     call nh3 
+    call trip
     call nh4 
     call std 
     call nfd 
