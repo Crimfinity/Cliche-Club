@@ -12,7 +12,7 @@ define audio.alarm = "mod_assets/alarm.wav"
 
 
 
-
+image sky = "mod_assets/sky.png"
 image weather1 = "mod_assets/weather1.png"
 
 image weather2 = "mod_assets/weather2.png"

@@ -2080,7 +2080,14 @@ label sh1:
     s "That sounds like fun!"
     show sayori cm at t11 
     "With Sayori's approval, the two of us depart to go to the park."
-    scene black with fade 
+    scene black 
+    show sswing:
+        truecenter
+        block:
+            rotate 0
+            ease .15 rotate 360 
+            repeat  
+    with fade 
     window hide 
     pause 2 
     #sayori is swinging on a swing super fucking fast
@@ -2094,60 +2101,107 @@ label sh1:
     "I have to shout for my voice to reach her in the heavens."
     s "Okay!"
     "With no hesitation, she lets go and is sent hurtling towards the sun."
-    #sky bg 
+    scene sky with dissolve 
     "Just gotta line this up..."
-    #slide whistle
-    #fade to white
-    #bg of the park burning down with child sayori sprite
+    play sound whistle  
+    show white zorder 2:
+        alpha 0 
+        2
+        ease 2 alpha  
+    pause 3 
+    scene white 
+    scene parkfire 
+    show schild #child sayori sprite 
+    with dissolve 
     s "EVERYTHING WILL BURN."
     s "NOTHING IS FREE FROM THE HELL THAT I CAST UPON IT."
     s "YOU WILL ALL PERISH BENEATH ME."
-    #fade to present time
+    scene bg park 
+    show sayori turned casual happ cm oe lup rup at i11 
+    with wipeleft 
     "I'm starting to think this may be a problem of hers."
+    show sayori nerv om 
     s "Thanks for catching me ehehehehehe~"
+    show sayori neut cm 
     mc "I guess you could say you've... fallen for me."
-    s "I guess?"
+    s curi om rdownv "I guess?"
+    show sayori neut cm  
     mc "What do you say we call it a day? I can only take one near death experience per park trip."
+    show sayori happ om ldown rdown at f11 
     s "Oh, like that time we met that weird football guy?"
+    show sayori cm at t11 
     "I... don't know exactly what she's talking about, nor do I want to know."
     mc "Yeah, exactly like that."
-    #residential night
+    scene bg residentialn with fade
     mc "So uh... see you tomorrow?"
+    show sayori turned casual om oe at f11 
     s "Yeah, I had a great time! It's been a while since we last hung out like this."
-    s "When's the last time we spent time together outside of school anyways?"
+    s sedu "When's the last time we spent time together outside of school anyways?"
+    show sayori neut cm at t11 
     mc "Probably when you burned down that movie theatre."
+    show sayori ce om lup rup at f11 
     s "Oh I remember now!"
+    show sayori cm at t11 
     mc "I remember all too well."
+    show sayori doub rdown om oe 
     s "hey, don't judge me! They undercooked my popcorn."
+    show sayori anno cm
     mc "Ah, you and your food."
+    show sayori om ldown rdown 
     s "Yeah, yeah, laugh it up."
+    show sayori cm 
     "A brief pause overcomes us as we take in the silence of our surroundings."
+    show sayori dist n3 om at f11 
     s "Hey, [player], there's something you should know..."
+    show sayori cm at t11 
     mc "Yeah, what is it?"
+    show layer master:
+        zoom 1 
+        subpixel true 
+        linear 60 zoom 10
+    pause 60
     #pause and zoom for 60 seconds
     #zoom out
+    show sayori neut -n3 om 
     s "I love you."
+    show sayori cm 
     mc "Wait, what?"
     "I thought this was gonna be another pitch for her self defence noose or whatever."
+    show sayori anno om lup rdown 
     s "You heard me, meanie."
+    show sayori cm at t11 
     mc "Uh, yeah, I did. You just caught me off guard."
+    show sayori neut om at f11 
     s "Are you really that surprised? I mean we've basically known each other our whole lives."
+    show sayori cm at t11 
     mc "I guess it makes sense."
+    show sayori lsur 
     mc "I uh... love you too?"
+    show sayori om lup rup 
     s "R-really?"
+    show sayori cm at t11 
     mc "Didn't you just say it wasn't surprising you had feelings for me? What makes it different the other way around?"
+    show sayori sad om n3 at f11 
     s "Well, yeah, but, it's {i}me{/i} we're talking about, I haven't even seen another guy in my life, and there's {s}three{/s} two cute girls you can go for in the club, wouldn't you rather be with either of them?"
+    show sayori cm at t11 
     mc "I love {i}you{/i}, Sayori. and I wouldn't have it any other way."
     #if they played another route
-    "I also already went through another route, but who am I to rain on her parade."
+    #"I also already went through another route, but who am I to rain on her parade."
     scene black
     "We then kiss or something."
     "It's pretty cool."
-    #residential night
+    scene bg residentialn
+    show sayori turned happ lup rdown casual cm at t11  
+    with fade 
+    show sayori om at f11 
     s "So, now that you're my boyfriend..."
+    show sayori cm om lup rup hf11
     s "You have to come help me make an ad for my self defence noose!"
+    show sayori cm at t11 
     "I've been played."
+    show sayori oe om rdown lup 
     s "Chop chop, [player], I've got the video camera set up in my living room!"
+    scene bg residential_day with dissolve 
     #fade to residential day
 label ss2:
     s "HEEEEY!"

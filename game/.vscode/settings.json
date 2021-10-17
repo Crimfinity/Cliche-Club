@@ -9,5 +9,8 @@
         "mchoice",
         "nroom",
         "rnoose"
-    ]
+    ],
+    "files.exclude": {
+        "**/*.rpyc": true
+    }
 }
