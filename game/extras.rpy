@@ -1908,6 +1908,10 @@ label nfd:
             mc "Now, what do you say we go home and become stuck in an eternal loop of reading parfait girls and baking cupcakes?"
             show natsuki rhip ce om at t11 
             n "Hell yeah!"
+            if persistent.n_complete == False:
+                $ persistent.routes += 1
+                $ persistent.n_complete = True 
+            
 
 
 
@@ -1957,7 +1961,6 @@ label nfd:
     #Epic credit sequence, coupled with epic soundtrack
     return 
   
-label sroute1:
     
 label sh1:
     
@@ -1993,8 +1996,13 @@ label sh1:
     pause 1
     "...What's that?{w=.5} What about the club?"
     "That doesn't matter anymore, we only care about Sayori now!"
-    #check for other routes finished
-    #"Maybe only because I already played another route, but who cares?"
+    if persistent.routes != 0:
+        "Maybe only because I already played another route, but who cares?"
+        if persistent.s_complete == True:
+            "Or I only finished the Sayori route and for some reason played it again instead of trying to play another route."
+            "...Which in practice a) circumvents the check set in place for the previous one line joke, and b) proves that I am a simp."
+            "Where was I?"
+            "Oh, right."
     "I get out of bed and tactically roll down my stairs."
     scene bg kitchen 
     show sayori turned happ om oe casual lup rup at face 
@@ -2185,8 +2193,11 @@ label sh1:
     s "Well, yeah, but, it's {i}me{/i} we're talking about, I haven't even seen another guy in my life, and there's {s}three{/s} two cute girls you can go for in the club, wouldn't you rather be with either of them?"
     show sayori cm at t11 
     mc "I love {i}you{/i}, Sayori. and I wouldn't have it any other way."
-    #if they played another route
-    #"I also already went through another route, but who am I to rain on her parade."
+    if persistent.routes != 0
+        if persistent.s_complete == True:
+            pass 
+        else:
+            "I also already went through another route, but who am I to rain on her parade."
     scene black
     "We then kiss or something."
     "It's pretty cool."
@@ -2201,61 +2212,115 @@ label sh1:
     "I've been played."
     show sayori oe om rdown lup 
     s "Chop chop, [player], I've got the video camera set up in my living room!"
-    scene bg residential_day with dissolve 
     #fade to residential day
+    return
 label ss2:
+    scene bg residential_day with dissolve 
     s "HEEEEY!"
+    show sayori turned uniform happ cm ce lup rup at t11 
     mc "Oh hey Sayori, you're up early!"
+    show sayori om oe at f11 
     s "You noticed~"
-    s "It sure is a sunny day!"
+    s ce "It sure is a sunny day!"
+    show sayori cm at t11 
     "I look up."
     mc "Yeah, it sure is."
+    show sayori om neut 
     s "I meant more metaphorically, but yeah."
+    show sayori cm  
+    mc "You know what metaphors are?"
+    s happ ce om "Nope!"
     mc "Oh."
-    mc "So, did you want to walk to school together?"
-    s "Sure!"
+    s "So, did you wanna walk to school together?"
+    mc "Sure."
+    s "Yippie!"
+    scene club day with fade 
+    show sayori turned uniform happ om oe at f11 
     #fade to club I guess 
     #show sayori 
     s "Hey everyone, I have an announcement to make!"
-    #show everyone else
+    show sayori cm at t42 zorder 10
+    show yuri turned cm at t41 
+    show monika forward cm at t44 
+    show natsuki turned cm at t43  
     "All of the club members turn to address Sayori."
+    show sayori ce om lup rup at f42 
     s "I am depression!"
-    #pause
+    show sayori cm at t42 
+    show yuri dist 
+    show natsuki curi 
+    pause .5 
+    show yuri om zorder 11 
     y "...Do you mean {i}have{/i} depression?"
+    show yuri pani cm lup 
+    show sayori vang om oe at f11 
+    show veins zorder 100 
+    show vignette zorder 99 
+    show layer master:
+        truecenter 
+        easeout .4 zoom 1.6 xoffset -800  
     #zoom plus vignette focusing on sayori and Yuri
     s "DON'T RUIN THIS FOR ME, YURI."
-    y "imsorry."#small text
+    show sayori cm 
+    show yuri om rup ce pani 
+    "Yuri" "{size=8}\"{i}imsorry."#small text
     #effect ends abruptly
+    show layer master:
+        truecenter 
+        zoom 1.6 
+        xoffset -800 
+        ease 6 zoom 2.4 xoffset -1200
+    pause 8 
+    show layer master 
+    hide veins
+    hide vignette 
+    hide natsuki 
+    show yuri at i31 
+    show sayori neut cm oe at i11
+    show monika anno om oe at i33
     m "{i}Ahem.{/i}{w} We're very proud of you for telling us and support you indefinitely."
-    #s "Even if I burn things to cope with my sadness?"
+    show monika neut cm at t22 
+    show sayori curi om at t21 
+    s "Even if I burn things to cope with my sadness?"
+    show sayori cm at t21 
+    show monika doub om 
     m "Yeah, sure, knock yourself out."
+    show monika cm 
     mc "{i}Please don't encourage her.{/i}"
+    show monika at thide 
+    hide monika 
+    show sayori yand om oe rup ldown at f11 
     s "The reckoning is nigh, [player]."
     s "The flames of cleansing will turn everything in this world to ash."
     "Writers, a little help here?"
     scene black
     window hide 
-    pause .5 
-    "Whew, thank god that scene's over."
     pause 2 
     return
-label sn2:
+label sn1:
     #fade into picnic scene (already written in Nat route)
 
-    #fade to res night
+    scene bg reidentialn with fade 
     mc "Boy, what a day that was."
-    s "Say, it's late, and our parents are not only not home, but basically nonexistent."
+    show sayori nerv om oe lup rdown uniform at t11 
+    s "Say, it's late, and our parents are not only not home, but basically nonexistent." 
+    show sayori cm 
     mc "Yeah?"
+    show sayori tap nerv om oe 
     s "Did you maybe wanna..."
+    show sayori at f11 
     s "{cps=4}Buy a self defenc--{nw}"
+    show sayori anno cm at t11 
     mc "Not interested."
+    show sayori doub om rup ldown 
     s "Meanie."
     s "In that case, I'm going to sleep."
+    show sayori cm 
     return
-label end: 
+label send: 
     #fade into save the dokis scene (also from natsuki's scene but I'll have to write a few lines for Natsuki
 
-    #residential day
+    scene bg residential day with fade 
     "Ah, the weekend~"
     "It's a nice day out, couldn't have asked for any better."
     "Say, I wonder what Sayori is up to on this fine afternoon."
@@ -2264,25 +2329,42 @@ label end:
     "Uhh...{w=.5} Why is her house so dark?"
     "it made sense when it was nighttime, but it's the middle of the afternoon."
     "Does she just not have windows?"
-    "Or maybe this is just some kind of time or budget constrai--"
-    #screen glitches
+    "Or maybe this is just some kind of time or budget constrai--{w=.3}{nw}"
+    show screen tear(20, 0.1, 0.1, 0, 40)
+    play sound "sfx/s_kill_glitch1.ogg"
+    $ pause(0.25)
+    hide screen tear
     "Lets go see what Sayori is up to."
     "I gently open the door, not because I really care about being sensitive, but because it feels right."
+    play sound closet 
+    scene bg sayori_bedroom 
+    show sayori pjs dist rnoose ldown cm oe at i11 
+    with wipeleft
     #sayori in suicide clothes with noose
+    show sayori happ 
     mc "Hey Sayori."
     "Her eyes light up when she sees me."
+    show sayori lup om at f11 
     s "Oh! Hiya [player]! It's great to see you."
+    show sayori neut cm at t11 
     mc "Performing some R&D on your self-defence noose."
+    show sayori ce om at f11 
     s "You know it! Wanna help me test it?"
+    show sayori sad cm at t11 
     mc "I'll pass, thank you very much."
+    show sayori neut om 
     s "Welp, looks like it's up to me."
-    #sayori slides over a little
+    show sayori cm e2b at t21 
     "Sayori begins fastening the rope to her ceiling."
+    show sayori at d21  
     "She then grabs a chair and slides it underneath."
     "Hey, wait a minute..."
+    show sayori -e2b oe
     "Sayori, you aren't going to try killing yourself, are you?"
+    show sayori happ ldown ce om 
     s "hehe, no silly~"
-    s "It's not a matter of trying, I will succeed."
+    s neut oe "It's not a matter of trying, I will succeed."
+    show sayori cm 
     "My heart rate accelerates."
     "Fuckfuckfuckfuck."
     "Sayori's life in danger right now."
@@ -2291,65 +2373,102 @@ label end:
 
     menu:
         "Right":
-
+            show sayori om at f21 
             s "Hey, could you step out for a second?"
+            show sayori cm at t21 
             mc "When you're about to off yourself?"
-            s "Well yeah, you don't want to see it happen, do you?"
+            s nerv om "Well yeah, you don't want to see it happen, do you?"
+            show sayori cm 
             mc "I don't want it to happen in the first place!"
-            s "Relax, once I'm gone, there's three other people you can talk to."
-            s "Actually there's only two worth talking to, but that's being nitpicky."
+            s happ om "Relax, once I'm gone, there's three other people you can talk to."
+            s neut "Actually there's only two worth talking to, but that's being nitpicky."
+            show sayori cm 
             mc "But we all care about you, and I don't want to talk to any of them."
             mc "Hell, they're practically entirely ignored on this route."
+            show sayori om ldown 
             s "I guess you have a point."
+            show sayori angr om 
             s "But I would've wasted so much time!"
-            s "I made this whole business solely as a guise to hold onto a ton of nooses."
+            s sad ce om "I made this whole business solely as a guise to hold onto a ton of nooses."
+            show sayori cm 
             "Wow, she's a lot more clever than I have her credit for."
             "Even if that's way darker than this mod should be."
+            show sayori doub om oe 
             s "It would be such a drag to {i}not{/i} kill myself at this point."
+            show sayori cm neut at t21 
             mc "Okay, first, wouldn't you be wasting more time by just not living?"
+            show sayori lsur 
             mc "Second, we don't have to waste the nooses, we could build a massive corporate empire."
+            show sayori happ 
             mc "I'll help you sell all your nooses so you don't have to throw them out."
-            "I sure hope people end up buying them because they're cheaper than rope and not because they come pre-tied."
+            "I sure hope people end up buying them because they're at a competitave price and not because they come pre-tied."
+            show sayori om at f21 
             s "Alright, you've got a deal."
             s "Pleasure doing business with you."
+            show sayori n3 cm at t21 
             "Sayori steps down from her chair and embraces me."
-            #scene black
+            scene black with fade
+            window hide  
+            pause 1 
             mc "So, are you feeling a little better now?"
             s "One hundred degrees."
             mc "Wait, were the degrees just percentages the whole time?"
-            #roll credits
+            if persistent.s_complete == False:
+                $ persistent.routes += 1
+                $ persistent.s_complete = True 
+            return 
+     
 
         "Wrong":
+            jump send2
+label send2:
+    show sayori neut om at f21 
+    s "Hey, could you step out for a second?"
+    show sayori cm at t21 
+    mc "Huh? Uh, yeah, sure."
+    show sayori lup happ om 
+    s "Great! Thanks."
+    scene black with wipeleft 
+    #close door
+    s "Alright, now count to 30 and come back in."
+    mc "Is this a game of hide and seek."
+    s "Sure is."
+    "I chuckle."
+    "She really is childish. I mean, when was the last time we played hide and seek."
+    "Better get to counting."    
+    jump counting
+label send2: 
+    mc "Ready or not, here I come!"
+    "I excitedly gently open the door."
+    scene bg sayori_bedroom
+    show s_kill 
+    play music t7
+    #monika is behind the window, disappointed 
+    "Oh wow, she killed herself."
+    "I for one, am shocked."
+    "And why is poem panic playing?"
+    window hide 
+    stop music fadeout 2 
+    pause 2 
+    "...That's better"
+    "Hold on, there's a note clenched in her fist." 
+    call showpeom(poem_s2)
 
-            s "Hey, could you step out for a second?"
-            mc "Huh? Uh, yeah, sure."
-            s "Great! Thanks."
-            #close door
-            s "Alright, now count to 30 and come back in."
-            mc "Is this a game of hide and seek."
-            s "Sure is."
-            "I chuckle."
-            "She really is childish. I mean, when was the last time we played hide and seek."
-            "Better get to counting."
-            #I'm literally just going to code a loop that counts to thirty.
-            mc "Ready or not, here I come!"
-            "I excitedly gently open the door."
-            # s kill, shocker.
-            #monika is behind the window, disappointed 
-            "Oh wow, she killed herself."
-            "I for one, am shocked."
-            #to be continued in I gently open the door 2
-            m "Seriously? You're using an ending to plug another one of your shitty projects?"
-            #the splash text changes to respond
-            "Fuck off, Monika."
-            "Just let me have this."
-            "My wife is leaving me, and she's taking the kids, is this too much to ask for?"
-            m "Riiight, we both know you don't have a wife."
-            "JUST LET ME HAVE THIS."
-            m "...Fine."
+    "Of course."
+    "But who's going to be selling the nooses if she's dead?"
+    "Also, is something burning?"
+    return 
 
 
-
+    
+label counting:
+    default count = 1 
+    mc "[count]"
+    $ count += 1 
+    if count >= 30:
+        jump send2 
+    else: 
+        jump counting 
 
 
 

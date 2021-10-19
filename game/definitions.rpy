@@ -72,7 +72,7 @@ init python:
     def pause(time=None):
         global _windows_hidden
         if not time:
-            _windows_hidden = True
+            _windows_hidden = Trues
             renpy.ui.saybehavior(afm=" ")
             renpy.ui.interact(mouse='pause', type='pause', roll_forward=None)
             _windows_hidden = False
@@ -83,7 +83,10 @@ init python:
         _windows_hidden = False
 
 
-
+default persistent.n_complete = False 
+default persistent.s_complete = False 
+default persistent.y_complete = False 
+default persistent.routes = 0
 
 
 define audio.t1 = "<loop 22.073>bgm/1.ogg"

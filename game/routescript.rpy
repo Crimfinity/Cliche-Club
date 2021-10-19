@@ -2,6 +2,13 @@
 
 label sroutestart:
     call ss1 from _call_ss1
+    call sh1 
+    call ss2 
+    call trip 
+    call sn1
+    call std 
+    call send
+    jump ccredits 
     return
 label nroutestart:
     call ns1 from _call_ns1
