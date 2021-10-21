@@ -1,0 +1,36 @@
+﻿I'm sorry, but an uncaught exception occurred.
+
+While running game code:
+  File "game/routescript.rpy", line 10, in script call
+    call send
+  File "game/extras.rpy", line 2532, in script call
+  File "game/poems.rpy", line 678, in script
+    $ pause()
+  File "game/poems.rpy", line 678, in <module>
+    $ pause()
+  File "game/definitions.rpy", line 75, in pause
+    _windows_hidden = Trues
+NameError: global name 'Trues' is not defined
+
+-- Full Traceback ------------------------------------------------------------
+
+Full traceback:
+  File "game/routescript.rpy", line 10, in script call
+    call send
+  File "game/extras.rpy", line 2532, in script call
+  File "game/poems.rpy", line 678, in script
+    $ pause()
+  File "C:\Users\decla\Documents\GitHub\Cliche-Club\renpy\ast.py", line 914, in execute
+    renpy.python.py_exec_bytecode(self.code.bytecode, self.hide, store=self.store)
+  File "C:\Users\decla\Documents\GitHub\Cliche-Club\renpy\python.py", line 2028, in py_exec_bytecode
+    exec bytecode in globals, locals
+  File "game/poems.rpy", line 678, in <module>
+    $ pause()
+  File "game/definitions.rpy", line 75, in pause
+    _windows_hidden = Trues
+NameError: global name 'Trues' is not defined
+
+Windows-8-6.2.9200
+Ren'Py 7.3.5.606
+Doki Doki Cliche Club 0.0.1
+Thu Oct 21 01:35:24 2021

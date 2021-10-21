@@ -13,7 +13,13 @@ transform tlow(x=640, z=0.80):
         parallel:
             easein .15 yoffset 0 ypos 1.03
 
+define wipeleft_door = MultipleTransition([
+    False, ImageDissolve("images/menu/wipeleft.png", 0.35, ramplen=64),
+    Solid("#000"), Pause(0.141),
+    Solid("#000"), ImageDissolve("images/menu/wipeleft.png", 0.35, ramplen=64),
+    True])
 
+define close_eye = ImageDissolve("mod_assets/close_eye.png", 0.15, ramplen=64)
 transform tl11:
     tlow(640)
     

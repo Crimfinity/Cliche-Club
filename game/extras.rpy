@@ -397,7 +397,6 @@ label ss1:
     mc "Alright, you ready to walk home?"
     show sayori om rdown at t31
     s "Sure."
-    scene bg residential_day with wipeleft_scene
     return
 
 
@@ -1405,6 +1404,8 @@ label nh3:
     stop music fadeout .5
     return 
 label trip:
+    if persistent.routes != 0:
+        call screen dialog("You've already seen this scene, click skip if you don't feel like replaying it.", ok_action=Return())
     scene bg club_day with wipeleft_scene 
 
     play music t5 
@@ -1428,7 +1429,7 @@ label trip:
     m lean happ om oe  "Oh well, it's picnic time!"
     show monika cm 
     mc "Hold on, I never agreed to this."
-    scene bg park 
+    scene park 
     show monika lean om oe at i11
     m "But can you stop me?"
     show monika forward happ cm ce 
@@ -1502,8 +1503,9 @@ label trip:
     y shy n5 neut om oe "Uuuuuuuuuuuuuuuuuuuuuuuuuuuu{nw}"
     y turned om oe ldown rdown neut "Alright.{fast}"
     stop music fadeout 1 
+    return 
+label nh3_2: #because I didn't seperate this from the picnic like a dumbass
     scene bg lrn with dissolve_scene_full
-
     play music t8 
     mc "Man, what a day!"
     show natsuki turned casual happ om oe lhip rhip at f11 
@@ -1756,28 +1758,42 @@ label std:
     m "Good luck!"
     show monika at thide 
     hide monika 
-    show yuri turned neut cm oe at t11 
-    mc "Don't cut yourself lol."
-    show yuri nerv om oe at f11 
-    y "T-t-t-t-t-t-t-t-thank you [player]. I'm cured."
-    show yuri at lhide 
-    hide yuri 
-    show sayori turned neut cm oe at t11 
-    mc "Don't be sad."
-    show sayori tap nerv om oe 
-    s "You know... I'd be a lot less sad if you invested in my business endeavors."
-    show sayori turned anno cm  
-    mc "Sorry, I'm not interested in buying any nooses anytime soon."
-    show sayori om at f11 
-    s "Meanie."
-    show monika forward sad ce om at l31
-    m "Fine, I'll just buy one instead."
-    show monika cm 
-    show sayori happ lup rup om ce at h11  
-    s "Yay! Thanks Monika!"
-    show sayori at thide
-    hide sayori  
-    show monika oe neut at t11 
+    if y_route == False:
+        show yuri turned neut cm oe at t11 
+        mc "Don't cut yourself lol."
+        show yuri nerv om oe at f11 
+        y "T-t-t-t-t-t-t-t-thank you [player]. I'm cured."
+        show yuri at lhide 
+        hide yuri 
+    if n_route == False:
+        show natsuki turned neut cm oe at t11 
+        mc "Just kill your dad."
+        show natsuki lsur om at f11 
+        n "Damn, that's hardcore."
+        n curi "But what if I still love him or something?"
+        show natsuki cm at t11 
+        mc "Well my dog died last summer, so there's a doghouse in my backyard with your name on it!"
+        show natuski lhip rhip neut om 
+        n "Sure, works for me."
+        show natsuki cm at thide 
+        hide natsuki 
+    if s_route == False: 
+        show sayori turned neut cm oe at t11 
+        mc "Don't be sad."
+        show sayori tap nerv om oe 
+        s "You know... I'd be a lot less sad if you invested in my business endeavors."
+        show sayori turned anno cm  
+        mc "Sorry, I'm not interested in buying any nooses anytime soon."
+        show sayori om at f11 
+        s "Meanie."
+        show monika forward sad ce om at l31
+        m "Fine, I'll just buy one instead."
+        show monika cm 
+        show sayori happ lup rup om ce at h11  
+        s "Yay! Thanks Monika!"
+        show sayori at thide
+        hide sayori  
+    show monika forward cm oe neut at t11 
     mc "So that should be about everyone, right?"
     show monika anno oe om at f11 
     m "Aren't you forgetting someone?"
@@ -1792,9 +1808,9 @@ label std:
     m "I think it's time to go."
     show monika cm 
     mc "Alright, see ya Monika."
-    show monika at thide 
-    hide monika 
     if n_route == True:
+        show monika at thide 
+        hide monika 
         show natsuki turned neut cm oe at t11 
         mc "Hey Nat, ready to walk home?"
         show natsuki rhip angr om at f11
@@ -1843,7 +1859,7 @@ label nfd:
     hide natsuki 
     "In shock, I stand still as the two grow smaller and smaller in my view."
     "Eventually, I snap into action and run after them."
-    scene bg housen with wipeleft
+    scene bg house_night with wipeleft
     "I finally see the man dart into a house and slam the door shut behind him."
     "Shit, that's probably her dad she was talking about the other day."
     "With no other choice, I dart up the driveway and swing open the door."
@@ -1970,6 +1986,7 @@ label sh1:
         linear 1 rotate 360
         repeat 
     with wipeleft_scene 
+    play music t8 
     "Sayori (who is currently spinning for some reason) and I walk home." 
     "I get the urge to ask about her \'Uwaa-ing\' earlier, but I don't want to come off as intrusive." 
     "Instead, I decide to ask about her day." 
@@ -1985,6 +2002,7 @@ label sh1:
     show sayori happ ce om at f11 
     s "See ya, [player]!" 
     mc "See you, Sayori." 
+    stop music fadeout 1 
     scene bg bedroom with fade 
     "Welp, nothing relevant to do at home yet. Guess it's time to go to sleep."
     scene black 
@@ -2004,6 +2022,7 @@ label sh1:
             "Where was I?"
             "Oh, right."
     "I get out of bed and tactically roll down my stairs."
+    play music t2 
     scene bg kitchen 
     show sayori turned happ om oe casual lup rup at face 
     show layer master at vpunch 
@@ -2033,19 +2052,21 @@ label sh1:
     pause .4 
     show layer master at hpunch 
     play sound crash 
-    s "FOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOIDONOTRECOGNIZETHESTATEOFISREALOOOOOOOOOOOOOOOOO--"
+    s "FOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOIDONOTRECOGNIZETHESTATEOFISREALOOOOOOOOOOOOOOOOO"
     "Guess I should follow her."
-    scene bg restaurant with wipeleft_scene
+    scene bg rr with wipeleft_scene
     mc "So Sayori, how are you feeling today?"
-    show sayori neut lup rdown casual e3a
+    show sayori turned casual neut lup rdown casual om e3a at i11
+    stop music 
     s "I am entirely motivated by food."
     show sayori at f11 
+    play music t8 
     s yand om oe -e3a "So I'm great!"
     show sayori cm 
     mc "I'm glad to hear it."
     show sayori:
-        ease .3 zoom 1
-        ease .3 zoom 1.1
+        ease 2.3 zoom .82
+        ease 2.3 zoom .85
         repeat  
     "A pause comes over us as neither of us can think of what to say."
     "But it isn't awkward really, the two of us are just enjoying each other's presence and munching on fries."
@@ -2057,20 +2078,23 @@ label sh1:
     show sayori cm dist at t11 
     mc "I still don't understand how you managed to burn down a restaurant you didn't work at."
     mc "Hell, it only reopened last week!"
-    s doub om "Eh? Don't remind me, meanie!"
+    s doub oe om "Eh? Don't remind me, meanie!"
     show sayori cm 
     mc "Alright, alright. I'm sorry."
     show sayori happ om 
     s "No biggie, [player]."
     show sayori cm 
+    stop music fadeout 3
     "Sayori killed twelve people that day."
     "I can still remember the screams reverberating throughout the smoldering Jack in the Box™."
     #Time skip
     scene black with fade 
+    window hide 
     pause 1 
-    scene bg restaurant 
+    scene bg rr
     show sayori turned casual happ ce cm at i11 
     with fade 
+    play music t2 
     mc "Man I'm stuffed, what about you Sayori?"
     show sayori neut om oe at f11 
     s "My stomach is an abyss with infinite capacity for nutrients."
@@ -2088,17 +2112,24 @@ label sh1:
     s "That sounds like fun!"
     show sayori cm at t11 
     "With Sayori's approval, the two of us depart to go to the park."
-    scene black 
+    stop music fadeout 1.5 
+    window hide 
+    scene black with fade
+    window hide 
+    pause 1 
+    scene park2 
     show sswing:
         truecenter
+        yoffset -500
+        zoom .8
         block:
             rotate 0
-            ease .15 rotate 360 
+            linear .25 rotate 360 
             repeat  
     with fade 
     window hide 
+    play music t6 
     pause 2 
-    #sayori is swinging on a swing super fucking fast
     s "Wheeeeeeeeeeeeeeeeeeeeee!"
     "Man, I didn't know I could swing a swing so fast."
     "Is this like... safe? I won't like, turn her into a pancake or something?"
@@ -2109,30 +2140,38 @@ label sh1:
     "I have to shout for my voice to reach her in the heavens."
     s "Okay!"
     "With no hesitation, she lets go and is sent hurtling towards the sun."
+    stop music fadeout 5 
     scene sky with dissolve 
     "Just gotta line this up..."
-    play sound whistle  
+    play sound "mod_assets/whistle.mp3"
+    pause 1.5   
     show white zorder 2:
         alpha 0 
         2
-        ease 2 alpha  
-    pause 3 
+        ease 2 alpha 1
+    pause 6 
+    play sound "mod_assets/fire.mp3"
     scene white 
     scene parkfire 
-    show schild #child sayori sprite 
+    show schild zorder 1 at i11:
+        zoom 1.6 #child sayori sprite
+        dizzy(1,.001) 
+    show parkfm zorder 2
     with dissolve 
     s "EVERYTHING WILL BURN."
     s "NOTHING IS FREE FROM THE HELL THAT I CAST UPON IT."
     s "YOU WILL ALL PERISH BENEATH ME."
-    scene bg park 
+    stop sound 
+    scene park2 
     show sayori turned casual happ cm oe lup rup at i11 
     with wipeleft 
     "I'm starting to think this may be a problem of hers."
     show sayori nerv om 
+    play music t8 
     s "Thanks for catching me ehehehehehe~"
     show sayori neut cm 
     mc "I guess you could say you've... fallen for me."
-    s curi om rdownv "I guess?"
+    s curi om rdown "I guess?"
     show sayori neut cm  
     mc "What do you say we call it a day? I can only take one near death experience per park trip."
     show sayori happ om ldown rdown at f11 
@@ -2140,7 +2179,7 @@ label sh1:
     show sayori cm at t11 
     "I... don't know exactly what she's talking about, nor do I want to know."
     mc "Yeah, exactly like that."
-    scene bg residentialn with fade
+    scene bg house_night with fade
     mc "So uh... see you tomorrow?"
     show sayori turned casual om oe at f11 
     s "Yeah, I had a great time! It's been a while since we last hung out like this."
@@ -2157,6 +2196,7 @@ label sh1:
     mc "Ah, you and your food."
     show sayori om ldown rdown 
     s "Yeah, yeah, laugh it up."
+    stop music fadeout 2 
     show sayori cm 
     "A brief pause overcomes us as we take in the silence of our surroundings."
     show sayori dist n3 om at f11 
@@ -2165,10 +2205,11 @@ label sh1:
     mc "Yeah, what is it?"
     show layer master:
         zoom 1 
-        subpixel true 
-        linear 60 zoom 10
+        subpixel True 
+        truecenter 
+        ease 60 zoom 10 yoffset 900
     pause 60
-    #pause and zoom for 60 seconds
+    show layer master 
     #zoom out
     show sayori neut -n3 om 
     s "I love you."
@@ -2193,29 +2234,35 @@ label sh1:
     s "Well, yeah, but, it's {i}me{/i} we're talking about, I haven't even seen another guy in my life, and there's {s}three{/s} two cute girls you can go for in the club, wouldn't you rather be with either of them?"
     show sayori cm at t11 
     mc "I love {i}you{/i}, Sayori. and I wouldn't have it any other way."
-    if persistent.routes != 0
+    if persistent.routes != 0:
         if persistent.s_complete == True:
             pass 
         else:
             "I also already went through another route, but who am I to rain on her parade."
-    scene black
+    scene black with close_eyes
     "We then kiss or something."
     "It's pretty cool."
-    scene bg residentialn
+    scene bg house_night
     show sayori turned happ lup rdown casual cm at t11  
     with fade 
     show sayori om at f11 
+    play music t6 
     s "So, now that you're my boyfriend..."
-    show sayori cm om lup rup hf11
+    show sayori ce om lup rup at hf11
     s "You have to come help me make an ad for my self defence noose!"
     show sayori cm at t11 
     "I've been played."
     show sayori oe om rdown lup 
     s "Chop chop, [player], I've got the video camera set up in my living room!"
     #fade to residential day
+    stop music fadeout 1 
     return
 label ss2:
+    window hide 
+    scene black with fade 
+    pause 1 
     scene bg residential_day with dissolve 
+    play music t2 
     s "HEEEEY!"
     show sayori turned uniform happ cm ce lup rup at t11 
     mc "Oh hey Sayori, you're up early!"
@@ -2225,17 +2272,25 @@ label ss2:
     show sayori cm at t11 
     "I look up."
     mc "Yeah, it sure is."
-    show sayori om neut 
+    show sayori om neut oe
     s "I meant more metaphorically, but yeah."
     show sayori cm  
     mc "You know what metaphors are?"
+    show sayori at hf11 
     s happ ce om "Nope!"
+    show sayori cm at t11 
     mc "Oh."
+    show sayori neut om oe ldown 
     s "So, did you wanna walk to school together?"
+    show sayori cm 
     mc "Sure."
+    show sayori happ ce om at f11 
     s "Yippie!"
-    scene club day with fade 
+    show sayori cm at t11 
+    stop music fadeout .9
+    scene bg club_day with fade 
     show sayori turned uniform happ om oe at f11 
+    play music t6 
     #fade to club I guess 
     #show sayori 
     s "Hey everyone, I have an announcement to make!"
@@ -2246,47 +2301,59 @@ label ss2:
     "All of the club members turn to address Sayori."
     show sayori ce om lup rup at f42 
     s "I am depression!"
-    show sayori cm at t42 
+    window hide 
+    show sayori cm
+    pause .3  
+    show sayori at t42 
     show yuri dist 
     show natsuki curi 
     pause .5 
     show yuri om zorder 11 
     y "...Do you mean {i}have{/i} depression?"
-    show yuri pani cm lup 
-    show sayori vang om oe at f11 
-    show veins zorder 100 
-    show vignette zorder 99 
+    stop music 
+    show yuri pani cm lup zorder 2 
+    show sayori vang om oe at f11 zorder 1:
+        zoom .8
+        ypos 1.03
+      
+        ease .2 xoffset -300 rotate -15 yoffset 70 zoom .9
+    show veins zorder 100 onlayer front
+    show vignette zorder 99 onlayer front 
     show layer master:
         truecenter 
-        easeout .4 zoom 1.6 xoffset -800  
+        ease_elastic .25 zoom 1.6 xoffset 400 yoffset 70  
     #zoom plus vignette focusing on sayori and Yuri
     s "DON'T RUIN THIS FOR ME, YURI."
     show sayori cm 
     show yuri om rup ce pani 
     "Yuri" "{size=8}\"{i}imsorry."#small text
     #effect ends abruptly
+    play music t3
     show layer master:
         truecenter 
         zoom 1.6 
-        xoffset -800 
-        ease 6 zoom 2.4 xoffset -1200
+        xoffset 400 yoffset 70
+        ease 6 zoom 2.4 xoffset 800 yoffset 140 
     pause 8 
     show layer master 
-    hide veins
-    hide vignette 
+    hide veins onlayer front    
+    hide vignette onlayer front
     hide natsuki 
     show yuri at i31 
-    show sayori neut cm oe at i11
+    hide sayori 
+    show sayori turned uniform neut cm oe at i11
     show monika anno om oe at i33
     m "{i}Ahem.{/i}{w} We're very proud of you for telling us and support you indefinitely."
-    show monika neut cm at t22 
-    show sayori curi om at t21 
+    show monika neut cm at t33 
+    show sayori curi om at t11 
     s "Even if I burn things to cope with my sadness?"
-    show sayori cm at t21 
+    show sayori cm at t11 
     show monika doub om 
     m "Yeah, sure, knock yourself out."
     show monika cm 
     mc "{i}Please don't encourage her.{/i}"
+    show yuri at thide 
+    hide yuri 
     show monika at thide 
     hide monika 
     show sayori yand om oe rup ldown at f11 
@@ -2294,23 +2361,24 @@ label ss2:
     s "The flames of cleansing will turn everything in this world to ash."
     "Writers, a little help here?"
     scene black
+    stop music 
     window hide 
     pause 2 
     return
 label sn1:
     #fade into picnic scene (already written in Nat route)
 
-    scene bg reidentialn with fade 
+    scene bg house_night with fade 
     mc "Boy, what a day that was."
-    show sayori nerv om oe lup rdown uniform at t11 
+    show sayori turned nerv om oe lup rdown uniform at t11 
     s "Say, it's late, and our parents are not only not home, but basically nonexistent." 
     show sayori cm 
     mc "Yeah?"
     show sayori tap nerv om oe 
-    s "Did you maybe wanna..."
+    s "{cps=14}Did you maybe wanna..."
     show sayori at f11 
-    s "{cps=4}Buy a self defenc--{nw}"
-    show sayori anno cm at t11 
+    s "{cps=12}Buy a self defenc--{nw}"
+    show sayori turned oe ldown rdown anno cm at t11 
     mc "Not interested."
     show sayori doub om rup ldown 
     s "Meanie."
@@ -2319,8 +2387,8 @@ label sn1:
     return
 label send: 
     #fade into save the dokis scene (also from natsuki's scene but I'll have to write a few lines for Natsuki
-
-    scene bg residential day with fade 
+    stop music fadeout 1 
+    scene bg residential_day with fade 
     "Ah, the weekend~"
     "It's a nice day out, couldn't have asked for any better."
     "Say, I wonder what Sayori is up to on this fine afternoon."
@@ -2336,23 +2404,23 @@ label send:
     hide screen tear
     "Lets go see what Sayori is up to."
     "I gently open the door, not because I really care about being sensitive, but because it feels right."
-    play sound closet 
+    play sound opend 
     scene bg sayori_bedroom 
-    show sayori pjs dist rnoose ldown cm oe at i11 
+    show sayori turned pjs dist rnoose ldown cm oe at i11 
     with wipeleft
     #sayori in suicide clothes with noose
     show sayori happ 
     mc "Hey Sayori."
     "Her eyes light up when she sees me."
-    show sayori lup om at f11 
+    show sayori om at f11 
     s "Oh! Hiya [player]! It's great to see you."
     show sayori neut cm at t11 
-    mc "Performing some R&D on your self-defence noose."
-    show sayori ce om at f11 
+    mc "Performing some R&D on your self-defence noose?"
+    show sayori ce happ om at f11 
     s "You know it! Wanna help me test it?"
     show sayori sad cm at t11 
     mc "I'll pass, thank you very much."
-    show sayori neut om 
+    show sayori neut om oe
     s "Welp, looks like it's up to me."
     show sayori cm e2b at t21 
     "Sayori begins fastening the rope to her ceiling."
@@ -2365,6 +2433,7 @@ label send:
     s "hehe, no silly~"
     s neut oe "It's not a matter of trying, I will succeed."
     show sayori cm 
+    show vignette with dissolve
     "My heart rate accelerates."
     "Fuckfuckfuckfuck."
     "Sayori's life in danger right now."
@@ -2372,13 +2441,14 @@ label send:
     #choice between right and wrong
 
     menu:
-        "Right":
+        "Right Choice":
             show sayori om at f21 
             s "Hey, could you step out for a second?"
             show sayori cm at t21 
             mc "When you're about to off yourself?"
             s nerv om "Well yeah, you don't want to see it happen, do you?"
             show sayori cm 
+            play music t9 
             mc "I don't want it to happen in the first place!"
             s happ om "Relax, once I'm gone, there's three other people you can talk to."
             s neut "Actually there's only two worth talking to, but that's being nitpicky."
@@ -2408,6 +2478,7 @@ label send:
             show sayori n3 cm at t21 
             "Sayori steps down from her chair and embraces me."
             scene black with fade
+            stop music fadeout 2
             window hide  
             pause 1 
             mc "So, are you feeling a little better now?"
@@ -2419,29 +2490,35 @@ label send:
             return 
      
 
-        "Wrong":
-            jump send2
-label send2:
-    show sayori neut om at f21 
-    s "Hey, could you step out for a second?"
-    show sayori cm at t21 
-    mc "Huh? Uh, yeah, sure."
-    show sayori lup happ om 
-    s "Great! Thanks."
-    scene black with wipeleft 
-    #close door
-    s "Alright, now count to 30 and come back in."
-    mc "Is this a game of hide and seek."
-    s "Sure is."
-    "I chuckle."
-    "She really is childish. I mean, when was the last time we played hide and seek."
-    "Better get to counting."    
-    jump counting
+        "Wrong Chioce":
+            show sayori neut om at f21 
+            s "Hey, could you step out for a second?"
+            show sayori cm at t21 
+            mc "Huh? Uh, yeah, sure."
+            show sayori  happ om #lup 
+            s "Great! Thanks."
+            play sound closed 
+            scene black with wipeleft_door 
+            s "Alright, now count to 30 and come back in."
+            mc "Is this a game of hide and seek?"
+            s "Sure is!"
+            "I chuckle."
+            "She really is childish. I mean, when was the last time we played hide and seek?"
+            "Better get to counting."    
+            jump counting
 label send2: 
+    mc "30!"
     mc "Ready or not, here I come!"
     "I excitedly gently open the door."
+    play sound opend 
     scene bg sayori_bedroom
-    show s_kill 
+    show s_kill:
+        truecenter 
+        xoffset -400 yoffset 40 zoom .8 
+    with wipeleft_door
+    play sound sting  
+    window hide 
+    pause 4 
     play music t7
     #monika is behind the window, disappointed 
     "Oh wow, she killed herself."
@@ -2452,10 +2529,11 @@ label send2:
     pause 2 
     "...That's better"
     "Hold on, there's a note clenched in her fist." 
-    call showpeom(poem_s2)
-
+    call showpoem(poem_s2)
+    play sound "mod_assets/fire.mp3"
     "Of course."
     "But who's going to be selling the nooses if she's dead?"
+    stop music 
     "Also, is something burning?"
     return 
 
@@ -2489,8 +2567,9 @@ label ccredits:
     pause 5 
     scene bg credits with dissolve_scene_full 
     pause 5
-    scene bg notebook with dissolve
+    scene bg notebook
     show bod:
         xoffset -300
+    with dissolve
     pause 5
     return 

@@ -72,7 +72,7 @@ init python:
     def pause(time=None):
         global _windows_hidden
         if not time:
-            _windows_hidden = Trues
+            _windows_hidden = True
             renpy.ui.saybehavior(afm=" ")
             renpy.ui.interact(mouse='pause', type='pause', roll_forward=None)
             _windows_hidden = False
@@ -126,13 +126,20 @@ define audio.g1 = "<loop 0>bgm/g1.ogg"
 define audio.g2 = "<loop 0>bgm/g2.ogg"
 define audio.hb = "<loop 0>bgm/heartbeat.ogg"
 
-define audio.closet_open = "sfx/closet-open.ogg"
+define audio.opend = "sfx/closet-open.ogg"
 define audio.closet_close = "sfx/closet-close.ogg"
 define audio.page_turn = "sfx/pageflip.ogg"
 define audio.fall = "sfx/fall.ogg"
 define audio.thud = "mod_assets/thud.mp3"
 define audio.crash = "mod_assets/crash.mp3"
+define audio.closed = "sfx/closet-close.ogg"
+define audio.sting = "mod_assets/sting.ogg"
 
+image scild = "mod_assets/young.png"
+image park2 = "mod_assets/park2.png"
+image parkf = "mod_assets/parkf.png"
+image parkfire = "mod_assets/parkf.png"
+image parkfm = "mod_assets/parkfm.png"
 image bg fireclub = "mod_assets/fireclub.jpg"
 image bg entn = "mod_assets/entn.png"
 image bg house_night = "mod_assets/house_n.png"
@@ -162,12 +169,13 @@ image bg club_day2:
         "bg club_day"
     choice:
         "bg/club-skill.png"
-
+image schild = "mod_assets/young.png"
 define audio.gun =  "mod_assets/deag.mp3"
+image sswing = "mod_assets/sayoriswing.png"
 image bg credits = "mod_assets/credits1.png"
 image bod = "mod_assets/bod.png"
 image bg rr = "mod_assets/rr.png"
-image bg park = "mod_assets/park.png"
+image park = "mod_assets/park.png"
 image bg lra = "mod_assets/lra.png"
 image bg lrn = "mod_assets/lrn.png"
 image bg lrd = "mod_assets/lrd.png"
