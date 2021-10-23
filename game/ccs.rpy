@@ -18,7 +18,7 @@ label modthing:
                 "I should just go back to sleep."
                 show monika forward vang om oe at t11 zorder 2
                 m "Fucking really!?"
-                m ce "You bring me back here and do some stupud shit like this?"
+                m ce "You bring me back here and do some stupid shit like this?"
                 m "Do you just want to see what happens?"
                 m oe "Here, take a look!"
                 show monika lean anno om oe 

@@ -262,7 +262,7 @@ label ss1:
     hide monika
     hide sayori
     show sayori turned ldown rdown happ om oe at f11
-    s "Oh hey [player], whats up?"
+    s "Oh hey [player], what's up?"
     show sayori cm at t11
     mc "Not much, just wanted to see what you were up to."
 
@@ -331,7 +331,7 @@ label ss1:
     show sayori happ om ce lup rup n1 at hf11
     s "Yay!{nw}"
     show sayori oe
-    s "Yay!{fast}{w=.15}Thanks [player]!"
+    s "Yay!{fast}{w=.15} Thanks [player]!"
     show sayori ce at h11
     pause .2
     show sayori at h11
@@ -1773,7 +1773,7 @@ label std:
         n curi "But what if I still love him or something?"
         show natsuki cm at t11 
         mc "Well my dog died last summer, so there's a doghouse in my backyard with your name on it!"
-        show natuski lhip rhip neut om 
+        show natsuki lhip rhip neut om 
         n "Sure, works for me."
         show natsuki cm at thide 
         hide natsuki 
@@ -2223,7 +2223,8 @@ label sh1:
     show sayori neut om at f11 
     s "Are you really that surprised? I mean we've basically known each other our whole lives."
     show sayori cm at t11 
-    mc "I guess it makes sense."
+    mc "Well yeah, that's basically the only thing we talk about."
+    pause .2
     show sayori lsur 
     mc "I uh... love you too?"
     show sayori om lup rup 
@@ -2428,7 +2429,7 @@ label send:
     "She then grabs a chair and slides it underneath."
     "Hey, wait a minute..."
     show sayori -e2b oe
-    "Sayori, you aren't going to try killing yourself, are you?"
+    mc "Sayori, you aren't going to try killing yourself, are you?"
     show sayori happ ldown ce om 
     s "hehe, no silly~"
     s neut oe "It's not a matter of trying, I will succeed."
@@ -2527,7 +2528,7 @@ label send2:
     window hide 
     stop music fadeout 2 
     pause 2 
-    "...That's better"
+    "...That's better."
     "Hold on, there's a note clenched in her fist." 
     call showpoem(poem_s2)
     play sound "mod_assets/fire.mp3"
@@ -2535,6 +2536,7 @@ label send2:
     "But who's going to be selling the nooses if she's dead?"
     stop music 
     "Also, is something burning?"
+    window hide 
     return 
 
 
