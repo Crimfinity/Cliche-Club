@@ -2191,7 +2191,7 @@ label sh1:
     show sayori cm at t11 
     mc "I remember all too well."
     show sayori doub rdown om oe 
-    s "hey, don't judge me! They undercooked my popcorn."
+    s "Hey, don't judge me! They undercooked my popcorn."
     show sayori anno cm
     mc "Ah, you and your food."
     show sayori om ldown rdown 
@@ -2396,7 +2396,7 @@ label send:
     scene black with wipeleft_scene
     pause 1.5
     "Uhh...{w=.5} Why is her house so dark?"
-    "it made sense when it was nighttime, but it's the middle of the afternoon."
+    "It made sense when it was nighttime, but it's the middle of the afternoon."
     "Does she just not have windows?"
     "Or maybe this is just some kind of time or budget constrai--{w=.3}{nw}"
     show screen tear(20, 0.1, 0.1, 0, 40)
