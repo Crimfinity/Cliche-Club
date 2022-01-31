@@ -2539,8 +2539,398 @@ label send2:
     window hide 
     return 
 
+label ys2:
+    scene bg corridor with fade 
+    window hide 
+    pause .45
+    "I approach the clubroom door, and hear voices going to and fro." 
+    m "And then I said…" 
+    m "That's not a hippo, that's my wife!" 
+    "A bit out of character, don't you think?" 
+    "Time to ping the creators of this mod on Discord!" 
+    "I enter the club, really taking in the flooring joke Monika bestowed upon my ears."
+    scene bg club_day 
+    show s_kill 
+    show monika forward laug om lpoint ce rhip at i22 
+    with wipeleft_scene
+    window hide  
+    #show monika talking to a hanging sayori, realizing she's hanging, and bringing her back
+    #closet bg
+    pause .5 
+    show monika happ cm oe 
+    pause .5 
+    show monika vsur with dissolve 
+    pause .25 
+    play sound "sfx/s_kill_glitch1.ogg"
+    hide s_kill 
+    show sayori turned cm neut ce at t21
+    pause .3 
+    show sayori lsur oe 
+    pause .15 
+    show sayori lsur ce 
+    pause .15 
+    show sayori oe 
+    pause .15 
+    show sayori ce 
+    pause .15 
+    show sayori oe 
+    pause .5 
+    scene bg closet
+    show yuri turned dist oe cm lup rup at t11 
+    show layer master:
+        truecenter 
+        zoom 1.35 
+        yoffset 200 
+    with wipeleft 
+
+    "Looks like Yuri is over by the closet."
+    "Should I go converse with her?" 
+    "I know it's been like, what? A day?" 
+    "But I think her eloquence is really rubbing off on me..." 
+    "Now, not to be a filthy weeaboo protag or anything..." 
+    "But damn does she look like an anime girl." 
+    "Kawaii-desu if I do say so myself."
+    pause 1
+    "I'm sorry."
+    pause .5  
+    "Ahem, getting off track."
+    "On the other hand..."
+    show natsuki turned cm rhip ldown angr cm ce at i31:
+        zoom .2
+    show layer master:
+        truecenter 
+        subpixel True yoffset 200 zoom 1.35 
+        ease 3 yoffset -600 xoffset 400 
+    #pan to really tiny natsuki
+    pause 3 
+    "I don't really feel any of Natsuki's charm rubbing off on me."
+    "Maybe if I was into children..."
+    "But alas."
+    n om lhip "...It's like I told you yesterday, MANGA IS LITERATURE!"
+    show natsuki cm
+    show layer master:
+        truecenter subpixel True  
+        zoom 1.35 yoffset 200 
+        ease 3 zoom 1 yoffset 0 
+    show yuri anno rdown om ce 
+    y "This again?" 
+    show yuri oe cm 
+    show natsuki angr om ldown rdown 
+    n "Yes, this again, book girl."
+    show natsuki neut cm 
+    pause 1
+    show natsuki angr om 
+    n "Hey, Camera!{w} I'm down here!"
+    show layer master:
+        truecenter 
+        subpixel True 
+        easein_quint 1.5 yoffset -600 xoffset 400 
+    # zoom back to Natsuki
+    show natsuki cm 
+    pause 3  
+    n doub ce "It doesn't matter anymore, I already said what I wanted to say!"
+    n anno oe "{i}Thanks for nothing.{/i}"
+    show natsuki cm oe
+    n angr om "What are you waiting for? Pan up so Yuri can respond!"
+    show layer master with dissolve:
+        zoom 1.35 yoffset 200 
+    y happ om "Thank you, Natsuki."
+    show yuri cm 
+    pause .5 
+    y doub ce om "Ahem,{w=.6} Natsu--{nw}"
+    show yuri cm ce lsur zorder 3 
+    show natsuki zorder 3 
+    show sayori hang:
+        xoffset -1500 
+        ease 1.5 xoffset 1500 
+
+
+    #hanging sayori slides across the scene with monika chasing here
+    s "{i}You can't catch me~~~~~{/i}{nw}"
+    show monika forward vsur om oe at l31 
+    m "How are you even moving!? Let me fix you!"
+    show monika cm:
+        easein_quint .4 xoffset 1500
+    
+
+    #zoom in on natsuki, hide monika and sayori
+    pause .5
+    "..."
+    scene bg closet 
+    show yuri turned cm dist oe lup rup at i22 
+    show natsuki turned cm oe neut at i21 
+    with dissolve_scene_full
+    pause .5 
+    show natuski at f21 
+    n lhip curi "So, where were we?"
+    show natsuki cm at t21 
+    show yuri om at f22 
+    y "I'm... not really sure I have the urge to continue the debate on why you're wrong."
+    #n "Jeez, no wonder you're…"
+    #pause .5 
+    #n "CAMERA, GET THE FUCK OVER HERE RIGHT THIS INSTANT."
+    #zoom into natsuki
+    show yuri cm at t22 
+    
+    #n "{b}As I was saying,{w}{/b} Yuri, are you really that spineless?"
+    show natsuki cross ce om angr at f21 
+    n "Jeez, are you really that spineless?"
+    n anno "No wonder you don't have any friends."
+    #camera slowly zooms out as yuri pauses before dipping
+    show yuri cry ce cm at s22 
+    y "Uuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuu{nw}"
+    show yuri:
+        ease .5 xoffset 3000 
+    show natsuki turned sad cm oe at t21 
+    pause 1.5 
+    show natsuki worr om at f21  
+    n "...Too far?"
+    show natsuki cm at t21 
+    hide yuri 
+    "I…{w} I should probably go comfort Yuri."
+    #hallway bg 
+    scene bg corridor with fade 
+    mc "Yuri?"
+    "Hmmmm... Calling her didn't work. Looks like I'm going to have to do some walking."
+    mc "Maybe she's down these stairs."
+    #immediate scene change to yuri cutting with ddlc+ stair bg
+    scene vend 
+    show yuri turned pani rcut lup om oe at h11 
+    y "AAAAHH!!!"
+    show yuri cm 
+    mc "There you are!"
+    mc "Oh jeez, that's a lot of blood!"
+    mc "Are you on your period?"
+    show yuri flus om at f11 
+    y "Huh? Uhhhhhhhhhhh."
+    show yuri cm at t11
+    "Hold on…"
+    pause 1 
 
     
+    "Silly me! Periods don't make blood come from your arm!"
+    "I would know, since I have one every month."
+    "That's right! I, [player], am canonically a girl now!"
+    "But only on the Yuri route."
+    "I mean, you should have expected this from the name."
+    y ce om rdown "I was j-j-j-j-j-j-j-j-j-j-j-j-j-just…"
+    show yuri nerv oe at f11  
+    y "Making tea!"
+    y ce "That's right! Making tea, and nothing else."
+    y nerv "I wasn't cutting myself or anything l-like that!"
+    y laug "Why would I do something so strange?"
+    show yuri cm lsur 
+    mc "Oh, so that's what you were doing."
+    show yuri at f11 
+    y pani om "No! I-{nw}"
+    show yuri dist cm oe at t11
+    "Yuri pauses as she averts her gaze."
+    y ce om "Yes, I was cutting myself."
+    show yuri cm 
+    "I was talking about the tea, but go off I guess."
+    y oe om "I've been doing it for as long as I can remember."
+    y sad ce "I understand if you hate me now. You don't have to talk to me anymore."
+    show yuri worr cm oe 
+    mc "Why would I hate you?"
+    show yuri lup om at f11 
+    y "Y-you don't?"
+    show yuri cm curi at t11 
+    mc "I think you're pretty poggers!"
+    y neut om "I'm sorry, I'm not quite sure what that word meant. Give me a moment."
+    show yuri cm 
+    "Yuri pulls out a dictionary and begins furiously flipping pages."
+    mc "Forget it."
+    mc "Cutting yourself probably isn't the most productive hobby, but it doesn't make you any less of a person."
+    mc "So keep your chin up! You have the whole club to support you."
+    show yuri dist rdown lup 
+    y "B-b-b-b--b-b-b-b-b-b-b-b-b-b-b-b-b-b-b-b-b--bb--b-b"
+    show yuri cry cm ce at s11 
+    "Yuri has trouble speaking as tears begin forming around her eyes."
+    show yuri om at t11 
+    y "But they hate me."
+    y oe "You heard what Natsuki said earlier!"
+    show yuri cm 
+    mc "That's just Natsuki being Natsuki."
+    "A half height banshee that really likes drawings of anime girls, that is."
+    mc "She's just projecting her own feelings onto you since she felt attacked."
+    #zoom 60
+    #wait why the fuck would I zoom 60?
+    #also mcs last line is fucking stupid
+    #oh well, I don't care enough about this mod anymore
+    y om "I see."
+    show yuri sad ce 
+    "Yuri wipes some tears from her cheek, getting blood on it."
+    mc "You uh… may want to go wash off in the bathroom."
+    mc "We can talk about getting you some help some other time."
+    y nerv om "Alright. t-t-t-thank you, [player]."
+    show yuri cm 
+    mc "Anytime."
+    mc "I'll walk you back to the club when you're ready."
+    y neut om "Right."
+    show yuri cm 
+    scene bg corridor with dissolve 
+    "This time, there were no voices inside the clubroom."
+    "Just silence."
+    mc "You ready?"
+    #breath posing
+    #yeah fuck that im lazy
+    show yuri turned neut cm oe at t11 
+    "She nods."
+    scene bg club_day with wipeleft_scene
+    "Hearing the door open, Natsuki gets up from the corner where she had been hunched up."
+    show natsuki cross dist oe om at l21 
+    n "...Hey."
+    show natsuki turned dist oe cm  
+    show yuri turned dist ldown rdown at t22 
+    y "Hi."
+    show yuri turned cm at t22 
+    show natsuki curi om rhip down 
+    n "So the weather today...."
+    show natsuki cm 
+    show yuri happ ce om at f22 
+    y "Indeed, it is quite pleasant."
+    y oe "The clouds, with the hue of our uniforms, drifting across the sky."
+    y neut "The rain, dropping peacefully to the ground."
+    y curi "And who could forget the crackling that occasionally interrupts our speech?"
+    # thunder midway through line of dialogue
+    show natsuki neut om at f21 
+    show yuri cm at t22 
+    n "Yuri, we're in a thunderstorm."
+    show natsuki at t21 
+    y dist om "...Right."
+    show natsuki curi ldown rdown om at f21 
+    n "You find that pleasant?"
+    show natsuki cm at t21
+    show yuri shy om oe at f22 
+    y "I do."
+    show yuri cm at t22  
+    show natsuki laug ce om at f21 
+    n "Heh. You're so weird, Yuri!"
+    show yuri om at s22  
+    show natsuki om neut at t21 
+    y "Uuuuuuuuuuuuuuuuuuuuuuuuuuuuuu"
+    show yuri cm 
+    show natsuki sad om at f21 
+    n "I mean that in a good way. Like, {w=.5}I enjoy hearing you talk about things."
+    n ce dist "Look, I'm sorry for being a bitch earlier."
+    show natsuki cm at t21 
+    show yuri dist om lup rup at f22
+    y "I'm… also sorry. For not ever taking you seriously."
+    show yuri cm at t22 
+    n oe om "Thanks."
+    show natsuki neut om lhip rdown at f21 
+    n "So, we cool?"
+    show natsuki cm at t21 
+
+    #thunder 
+    show yuri happ om at f22 
+    y "Yes."
+    show yuri cm at t22 
+    show sayori turned happ ce om zorder 3 at h11 
+    s "Hooray for friendship!"
+    show sayori cm 
+    "It seems the two of them made up for their quarrel from earlier."
+    show sayori at thide 
+    show yuri at thide 
+    show natsuki at thide 
+    hide sayori 
+    hide yuri  
+    hide natsuki 
+    show monika lean happ om oe at t11 
+    m "Okay, everyone!"
+    show monika forward lpoint rhip happ ce om
+    m "It's time for us all to head home."
+    show monika cm oe neut at t22
+    show natsuki turned lhip curi om oe at t21  
+    "Natsuki" "\"Shouldn't we wait until this storm stops, {w1.5}{nw}"
+    #monika disappears
+    show monika:
+        alpha 1 
+        ease .1 alpha 0
+    n "Shouldn't we wait until this storm stops, {fast}Monik--"
+    show natsuki lsur cm at t11 
+    n "..."
+    show natsuki cross angr om ce at f11  
+    n "Motherfuc--{nw}"
+    scene black 
+
+label ytp:
+    #forest bg 
+    #zoom for 999 seconds
+    "Where am I?{fast}"
+    "I barely leave my room, much less go exploring in a forest."
+    "What the hell did Sayori put in that cookie she gave me earlier!?"
+    "I should've known by the fact that she willingly gave up her food that there was something up."
+    "I begin to hear faint rusting in the distance as I take in my surroundings."
+    "Oh god, am I going to get eaten by a bear?"
+    "No, maybe it's Sayori. I was with her last I remember."
+    "We were watching tv and then I fell asleep..."
+    "Well, hopefully she'll know how to get home."
+    #wipeleft to forest clearing, Yuri is standing in the middle, inanimate objects floating around her.
+    mc "Oh, hi Yuri!"
+    y "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA{nw}"
+    y "Uuuuuuuuuuuuuuuuuuuuuuuu{nw}"
+    pause 1 
+    y "[player]? What are you doing here?"
+    y "This place is five hundred miles from civilization!"
+    mc "I dunno, I… walked?"
+    y "We're on an island!"
+    mc "It seems I learned how to swim."
+    "I'm completely dry though…"
+    mc "Speaking of which, how did you get here then?"
+    y "I can teleport."
+    mc "You can? How'd you manage that?"
+    y "Good question, my father brought it back from me on one of her business trips!" 
+    y "Before he died..."
+    y "Pretty neat, huh?"
+    "That sounds familiar…" 
+    mc "Sorry if this sounds a little intrusive, but…" 
+    mc "How did your parents die?"
+    y "Good question." 
+    stop music
+    pause 3 
+    y "The trees here in this forest have such a pleasant forest verdant shade, do they not?"
+    mc "Sure?"
+    mc "So anyways, telekinesis and teleportation, huh? That's pretty impressive."
+    "Can she 'telephone' too?"
+    "Or perhaps telescoping is an ability she possesses…"
+    y "Yes, I was just practicing before you arrived."
+    pause 1
+    y "And w-ww-w-w-w-w-well, I guess I still am practicing."
+    #all the objects fall 
+    y "Sorry."
+    mc "No worries."
+    y "Did you… need help getting back home?"
+    mc "I don't think I have enough energy to get back, so yes."
+    y "Understood. In that case, I will teleport you to your home."
+    y "We need to make physical contact and then we'll be off."
+    mc "Like a piggyback ride?"
+    y "I think just holding hands would be easier."
+    mc "Oh, sounds good."
+    "I walk through the clearing and (after narrowly avoiding tripping over a branch,) grip Yuri's hand with my own." 
+    y "Uuuuuuuuu."
+    mc "What's wrong?"
+    y "N-n-n-n-n-n-n-nothing! It's just… your… skin… is warm."
+    mc "Well yeah? All humans kinda are."
+    y "Ah. I've never actually touched one before."
+    "What's that supposed to mean?"
+    mc "Sooooo...  teleporting?"
+    y "Right, sorry. You probably think I'm weird now…"
+    mc "It's like Natsuki said, only the good kind."
+    #short pause
+    y "Thank you, [player]."
+    y "Now, get ready to feel very dizzy."
+    mc "Huh? Wh--{nw}"
+    #flash of white
+    #anxiety transform on residential day
+    "It feels as if my body is sizzling, like I'm some kind of sentient soda."
+    "But hey, looks like I'm back home."
+    "I look around, but Yuri is nowhere to be found."
+    "She probably teleported after me."
+    "Welp, I need to have a chat with Sayori, but first, I need some sleep."
+    #scene black with fade 
+
+
 label counting:
     default count = 1 
     mc "[count]"
