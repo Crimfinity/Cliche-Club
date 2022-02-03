@@ -28,5 +28,11 @@ label yroutestart:
     call ys1 from _call_ys1
     call ynas2 from _call_ynas2_1
     call ys2 
+    call ytp 
+    call picnic
+    call yc
+    call std
+    call yend 
+    jump ccredits
     return
 # Decompiled by unrpyc: https://github.com/CensoredUsername/unrpyc

@@ -1,6 +1,6 @@
 A mod by Crimsin and Soriinz
 
-Bg art by Alex, sovietspartan, Yagamirai, Nuxil, Kimagure after and patrax
+Bg art by Alex, sovietspartan, Yagamirai, Nuxil, Kimagure after, Minikle and patrax
 Sayori sprite by Oliver of the very epic wretched team 
 "Artwork by SovietSpartan (https://twitter.com/TsukiZuramaru), originally created for the Doki Doki Literature Club mod "Doki Doki Rewind/Replay", by Chronos (Discord: Chronos#1609)"
 
@@ -8,7 +8,7 @@ Sayori sprite by Oliver of the very epic wretched team
 Vending Machine:
 https://clipartsworld.com/
 
-playtesters: Skeleton, Nitor, Sakura Origami 
+playtesters: Skeleton, Frithian, Sakura Origami 
 
 sound effects (I didn't end up using one of these but oh well)
 https://freesound.org/people/egomassive/sounds/536777/

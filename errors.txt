@@ -2,9 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/extras.rpy", line 2105: expected 'image_name_component' not found.
-    show "mod_assets/sayoriswing.png":
-         ^
+File "game/extras.rpy", line 2644: ATL statement contains two expressions in a row; is one of them a misspelled property? If not, separate them with pass.
+    truecenter supbixel True xoffset 0 zoom 1.7 yoffset 200 
+                        ^
 
 Ren'Py Version: Ren'Py 7.3.5.606
-Thu Oct 21 00:27:32 2021
+Thu Feb 03 01:23:57 2022

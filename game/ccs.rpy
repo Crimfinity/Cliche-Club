@@ -361,7 +361,7 @@ label modthing:
             n om "Someone could've died, and you fucking laugh?"
             n "If you're gonna laugh at someone for sharing something they care about, you should head out the door you came in!"
             show natsuki cross cm at t11
-            "Matthew" "We were only here for the cupcakes anyway!"
+            b "We were only here for the cupcakes anyway!"
             "Everyone beelines for the door, leaving a fuming Natsuki alone with us."  
             "Perhaps they, too, were scared of the little-pink gremlin."
             "Silence and tension fill the room, as only the Club members remain."

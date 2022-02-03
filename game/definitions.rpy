@@ -135,11 +135,34 @@ define audio.crash = "mod_assets/crash.mp3"
 define audio.closed = "sfx/closet-close.ogg"
 define audio.sting = "mod_assets/sting.ogg"
 
+
+transform anxiety:
+    truecenter
+    subpixel True
+    zoom 1.2
+    parallel:
+        block:
+            rotate 0
+            ease 5 rotate 3
+            time 1
+            ease 5 rotate -3    
+            ease 5 rotate 0
+            repeat
+    parallel:
+        block:
+            dizzy(.8, 2.0)
+image stab = "#c20000"
+image corridor_r = "mod_assets/corridor_r.png"
+image club_r = "mod_assets/club_r.png"
+image vend = "mod_assets/vendingmachine.png"
 image scild = "mod_assets/young.png"
 image park2 = "mod_assets/park2.png"
 image parkf = "mod_assets/parkf.png"
 image parkfire = "mod_assets/parkf.png"
 image parkfm = "mod_assets/parkfm.png"
+image fountain = "mod_assets/fountain.png"
+image forest = "mod_assets/forest.png"
+image forest2 = "mod_assets/forest2.png"
 image bg fireclub = "mod_assets/fireclub.jpg"
 image bg entn = "mod_assets/entn.png"
 image bg house_night = "mod_assets/house_n.png"
@@ -1359,14 +1382,16 @@ image monika g2:
 define narrator = Character(ctc="ctc", ctc_position="fixed")
 define mc = DynamicCharacter('player', what_prefix='"', what_suffix='"', ctc="ctc", ctc_position="fixed")
 define s = DynamicCharacter('s_name', image='sayori', what_prefix='"', what_suffix='"', ctc="ctc", ctc_position="fixed")
+define w = DynamicCharacter('w_name', what_prefix='"', what_suffix='"', ctc="ctc", ctc_position="fixed")
 define m = DynamicCharacter('m_name', image='monika', what_prefix='"', what_suffix='"', ctc="ctc", ctc_position="fixed")
 define n = DynamicCharacter('n_name', image='natsuki', what_prefix='"', what_suffix='"', ctc="ctc", ctc_position="fixed")
 define y = DynamicCharacter('y_name', image='yuri', what_prefix='"', what_suffix='"', ctc="ctc", ctc_position="fixed")
 define ny = Character('Nat & Yuri', what_prefix='"', what_suffix='"', ctc="ctc", ctc_position="fixed")
-define c = Character('Crimsin', what_prefix='"', what_suffix='"', ctc="ctc", ctc_position="fixed")
+define c = Character('Crim', what_prefix='"', what_suffix='"', ctc="ctc", ctc_position="fixed")
 define so = Character('Soriinz', what_prefix='"', what_suffix='"', ctc="ctc", ctc_position="fixed")
+define b = Character('Edward', what_prefix='"', what_suffix='"', ctc="ctc", ctc_position="fixed")
 define _dismiss_pause = config.developer
-
+default w_name = "Waiter"
 default persistent.playername = ""
 default player = persistent.playername
 default persistent.playthrough = 0
