@@ -277,7 +277,7 @@ label ss1:
     window hide
     show sayori laug cm oe lup rup zorder 2 at f11
     stop music fadeout 1
-    play music livereport fadein 1
+    play music t6 fadein 1
     show weather1 zorder 1:
         subpixel True
         xoffset -1200

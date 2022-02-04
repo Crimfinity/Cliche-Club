@@ -18,7 +18,7 @@ image weather1 = "mod_assets/weather1.png"
 image weather2 = "mod_assets/weather2.png"
 image stand = "mod_assets/mic.png"
 
-define audio.livereport = "mod_assets/lrut.mp3"
+
 
 image vending = "mod_assets/vending.jpg"
 image tea = "mod_assets/tea.png"
