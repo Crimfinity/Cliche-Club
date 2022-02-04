@@ -88,7 +88,10 @@ default persistent.s_complete = False
 default persistent.y_complete = False 
 default persistent.routes = 0
 
-
+image bzoom:
+    "black"
+    zoom 6
+    truecenter
 define audio.t1 = "<loop 22.073>bgm/1.ogg"
 define audio.t2 = "<loop 4.499>bgm/2.ogg"
 define audio.t2g = "bgm/2g.ogg"

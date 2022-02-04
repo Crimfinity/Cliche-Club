@@ -3006,9 +3006,9 @@ label yc:
     y "I j-just thought I'd come sooner. As they say, the early bird gets the worm."
     show yuri worr cm at t11 
     mc "Does that make me a worm?"
-    show yuri om 
+    show yuri om pani at f11 
     y "Nnnno not at all! I'm sorry!"
-    show yuri cm 
+    show yuri cm sad at t11 
     mc "Calm down, I'm just messing with you."
     show yuri sad om rdown lup  
     y "You are?"
@@ -3053,12 +3053,12 @@ label yc:
     y ce "Who knows what they're writing on their little notepads? What secrets lie on those pages? They could be cursing us for all we know."
     show yuri neut cm oe 
     mc "Huh. Well I think you're the only one in this building capable of cursing somebody."
-    y ce dist om rdown "I suppose you're right."
+    y ce dist om rdown -n3 "I suppose you're right."
     show yuri cm 
     mc "Do you want me to order for you?"
-    show yuri neut om oe ldown rdown 
+    show yuri pout om oe ldown rdown 
     y "I simply need to prepare myself."
-    show yuri cm at t11     
+    show yuri cm neut at t11     
     mc "I'll take your word for it."
     "We both return to our respective menus until the waiter returns."
     w "Are you two ready to order?"
@@ -3071,6 +3071,7 @@ label yc:
     w "Alright then."
     "The waiter turns to address Yuri."
     w "And for you?"
+    show yuri ce at d11
     "Yuri musters all of her courage by taking a deep breath."
     show yuri om flus ce n3 at t11 
     y "Steak, please."
@@ -3078,7 +3079,7 @@ label yc:
     w "And how would you like that cooked?"
     window hide 
     pause 3 
-    scene house_n with fade 
+    scene bg house_night with fade 
     #long pause and fade to lack because I can't be fucked to continue this scene
 
 
@@ -3101,8 +3102,8 @@ label yc:
     scene black
     "We then kiss or something."
     "It's pretty cool."
-    scene bg house_n 
-    show yuri pani ce om n3 at i11 
+    scene bg house_night 
+    show yuri turned casual pani ce om n3 at i11 
     with fade 
     y "UUUUUUUwUUUUUUU."
     show yuri cm 
@@ -3115,7 +3116,7 @@ label yend:
     scene fountain with fade 
     #"It's a nice afternoon, the air is fresh and my balls are fresher."
     "It's a nice, post club afternoon."
-    show yuri turned neut cm oe e1b 
+    show yuri turned neut cm e1b book at t11
     "I notice Yuri is reading her painting thing on the edge of the fountain."
     "Before I can call out to her, another guy does."
     "He seems familiar..."
@@ -3137,6 +3138,9 @@ label yend:
     hide yuri 
     "WIthout warning, (other than the ominous line about 'fishies') Edward shoves Yuri into the fountain."
     mc "Yuri!"
+    show layer master:
+        truecenter subpixel True
+        ease .7 zoom 1.4 xoffset -250
     "I run towards the fountain."
     "Peering in, Yuri is nowhere to be found."
     "Guess she teleported."
@@ -3187,7 +3191,7 @@ label yend:
     show sayori lup rup om ce at f11 
     s "Yeah! Aren't they neat? They're super shiny on the inside!" 
     show sayori cm at t11 
-    mc "So was I just your R&D when I ate one."
+    mc "So was I just your R&D when I ate one?"
     show sayori om neut oe ldown rdown at f11 
     s "Yeah, pretty much."
     s dist "Clearly the dosage was too low."
@@ -3208,7 +3212,9 @@ label yend:
     pause 1 
     mc "Worked like a charm!"
     "Man, Sayori sure is a lifesaver!"
-    scene forest2 with dissolve 
+    show bzoom onlayer bzm
+    scene forest2 
+    with dissolve 
     "I continue through the woods until I find Yuri."
     "She's lying on the ground, holding what looks to be an empty bottle in her hand."
     "Once I get close, she notices me and stands up."
@@ -3218,8 +3224,9 @@ label yend:
     mc "Hey Yuri. You feeling okay?"
     y yand om "I feel incredible!"
     #yuri pulls off the knife
-    show yand om at f11 
+    show yuri yand om at f11 
     y "I'm a yandere now!"
+    show yuri cm at t11
     #"Woah! That was a shift."
     "DId the fountain incident bring this on or the bottle?"
     mc "Where did you get the knife?"
@@ -3242,8 +3249,8 @@ label yend:
             "Aw fuck it. I've got no better ideas."
             show layer master:
                 truecenter 
-                easein_quint .4 zoom 1.4 yoffset 400 
-            show yuri lsur ldown rdown 
+                easein_quint .4 zoom 2.5 yoffset 400 
+            show yuri lsur ldown rdown e3a
             "I grab a cookie out of my pocket and jam it into Yuri's mouth."
             window hide 
             pause .3
@@ -3256,11 +3263,11 @@ label yend:
             show yuri oe 
             pause 1.5
             show layer master:
-                truecenter zoom 1.4 yoffset 400
+                truecenter zoom 2.5 yoffset 400
                 easein_quint .4 zoom 1 yoffset 0
             show yuri shy n3 om oe  
-            y "uuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuu"
-            show yuri flus om oe n3 at hf11  
+            y "uuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuu"
+            show yuri turned flus om oe n3 at hf11  
             y "S-s-s-ss–s-s-sorry I wanted to stab you previously."
             show yuri cm at t11 
             "There we go, back to normal."
@@ -3271,7 +3278,7 @@ label yend:
             show yuri -n3 neut om oe lup rdown 
             y "I'm doing quite fine."
             show yuri cm 
-            mc "Well just that I love you, and I think you're very poggers."
+            mc "Well just know that I love you, and I think you're very poggers."
             y happ om "Thank you, [player]."
             show yuri cm 
             mc "So did you want to call it a day or…"
@@ -3285,8 +3292,8 @@ label yend:
             "We lay on a log and begin reading."
             "Hours pass."
             show layer master:
-                truecenter 
-                ease 100 zoom 0 alpha 0
+                truecenter subpixel True
+                linear 50 zoom 0 alpha 0
             "Then those hours turn into days, and the days turn into weeks."
             "Months turn into years and so on."
             "I lost track of time long ago."
@@ -3294,10 +3301,20 @@ label yend:
             "It's length may very well be infinite."
             "No matter how coordinated our page turning is, it seems new pages are spawned into existence faster."
             "We grow old and frail, yet we continue on."
-            show layer master
-            show sayori turned casual happ ce om rup rdown at if11 
+            "Our hearts no longer flutter as our souls fester."
+            "Are even here anymore?"
+            "Do we even exist?"
+            "But where is 'here', anyways?"
+            "No seriously, I have no clue where this island is located."
+            "We could be on another planet for all I know."
+            "Just the two of us, turning page after page for all of eternity."
+            "A never ending cycle of words that have lost their color."
+            "There is no escape from the grip of this monotunous tome of wisdom."
+            "We're stuck here. Forever."
+            show layer master at vpunch 
+            show sayori turned casual happ ce om rup ldown at face
 
-            show yuri vsur at i31 
+            show yuri vsur oe at h31 
             s "Hey you guys!"
             show yuri om at f31 
             show sayori curi oe ldown cm at t11
@@ -3308,12 +3325,12 @@ label yend:
             s "I dunno, I… walked?"
             show sayori cm rdown at t11 
             pause 3 
-            show sayori happ om oe at f11  
-            s "{cps=10}...Is this heaven?"
+            show sayori vsur om oe at f11  
+            s "{cps=15}...Is this heaven?"
             show sayori cm anno at t11 
             mc "Your dosage is still too low."
             show sayori ce om ldown rdown 
-            s "{cps=12}...God Da-–{nw}"
+            s "{cps=18}...God Da-–{nw}"
             if persistent.y_complete == False:
                 $ persistent.routes += 1
                 $ persistent.y_complete = True 
@@ -3326,13 +3343,26 @@ label yend:
             show yuri om at f11 
             y "I'm glad you think so!"
             show yuri at hf11 
+            play sound "sfx/stab.ogg"
             show stab onlayer front:
                 alpha 0 
                 easein_quint .25 alpha 1 
                 ease .5 alpha 0 
             pause .25 
             scene black 
+            window hide 
             #stab effect
+            pause 1.72
+            show stab onlayer front:
+                alpha 0 
+                easein_quint .25 alpha 1 
+                ease .5 alpha 0 
+            pause 2.49 
+            show stab onlayer front:
+                alpha 0 
+                easein_quint .25 alpha 1 
+                ease .5 alpha 0 
+            pause 1 
             "Yuri stabs me. {i}Seductively{/i}."
             "She keeps on slashing me until I'm filled with more holes than a sponge."
             mc "...You do have some kind of healing magic, right?"

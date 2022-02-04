@@ -1,44 +1,36 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
 While running game code:
-  File "game/ccs.rpy", line 640, in script
-    $ renpy.pause(hard=True)
-  File "game/ccs.rpy", line 640, in <module>
-    $ renpy.pause(hard=True)
-TypeError: unbound method get_tooltip() must be called with Quit instance as first argument (got nothing instead)
+  File "game/routescript.rpy", line 35, in script call
+    call yend
+  File "game/extras.rpy", line 3315, in script
+    mc "Your dosage is still too low."
+  File "renpy/common/00layeredimage.rpy", line 736, in _choose_attributes
+    raise Exception("The attributes for {} conflict: {}".format(tag, " ".join(both)))
+Exception: The attributes for sayori conflict: rup rdown
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
-  File "game/ccs.rpy", line 640, in script
-    $ renpy.pause(hard=True)
-  File "C:\Users\decla\Documents\GitHub\Cliche-Club\renpy\ast.py", line 914, in execute
-    renpy.python.py_exec_bytecode(self.code.bytecode, self.hide, store=self.store)
-  File "C:\Users\decla\Documents\GitHub\Cliche-Club\renpy\python.py", line 2028, in py_exec_bytecode
-    exec bytecode in globals, locals
-  File "game/ccs.rpy", line 640, in <module>
-    $ renpy.pause(hard=True)
-  File "C:\Users\decla\Documents\GitHub\Cliche-Club\renpy\exports.py", line 1480, in pause
-    rv = renpy.ui.interact(mouse='pause', type='pause', roll_forward=roll_forward)
-  File "C:\Users\decla\Documents\GitHub\Cliche-Club\renpy\ui.py", line 297, in interact
-    rv = renpy.game.interface.interact(roll_forward=roll_forward, **kwargs)
-  File "C:\Users\decla\Documents\GitHub\Cliche-Club\renpy\display\core.py", line 2702, in interact
-    repeat, rv = self.interact_core(preloads=preloads, trans_pause=trans_pause, **kwargs)
-  File "C:\Users\decla\Documents\GitHub\Cliche-Club\renpy\display\core.py", line 3515, in interact_core
-    rv = renpy.display.focus.mouse_handler(ev, x, y)
-  File "C:\Users\decla\Documents\GitHub\Cliche-Club\renpy\display\focus.py", line 407, in mouse_handler
-    return change_focus(new_focus, default=default)
-  File "C:\Users\decla\Documents\GitHub\Cliche-Club\renpy\display\focus.py", line 362, in change_focus
-    set_focused(current, newfocus.arg, newfocus.screen)
-  File "C:\Users\decla\Documents\GitHub\Cliche-Club\renpy\display\focus.py", line 109, in set_focused
-    new_tooltip = widget._get_tooltip()
-  File "C:\Users\decla\Documents\GitHub\Cliche-Club\renpy\display\behavior.py", line 749, in _get_tooltip
-    return get_tooltip(self.action)
-  File "C:\Users\decla\Documents\GitHub\Cliche-Club\renpy\display\behavior.py", line 373, in get_tooltip
-    return func()
-TypeError: unbound method get_tooltip() must be called with Quit instance as first argument (got nothing instead)
+  File "game/routescript.rpy", line 35, in script call
+    call yend
+  File "game/extras.rpy", line 3315, in script
+    mc "Your dosage is still too low."
+  File "C:\Users\decla\Documents\GitHub\Cliche-Club\renpy\ast.py", line 1183, in execute
+    show_imspec(self.imspec, atl=getattr(self, "atl", None))
+  File "C:\Users\decla\Documents\GitHub\Cliche-Club\renpy\ast.py", line 1153, in show_imspec
+    atl=atl)
+  File "C:\Users\decla\Documents\GitHub\Cliche-Club\renpy\exports.py", line 684, in show
+    new_what = renpy.game.context().images.apply_attributes(layer, key, name)
+  File "C:\Users\decla\Documents\GitHub\Cliche-Club\renpy\display\image.py", line 934, in apply_attributes
+    return self.choose_image(nametag, required, optional, name)
+  File "C:\Users\decla\Documents\GitHub\Cliche-Club\renpy\display\image.py", line 951, in choose_image
+    newattrs = ca(tag, ca_required, ca_optional)
+  File "renpy/common/00layeredimage.rpy", line 736, in _choose_attributes
+    raise Exception("The attributes for {} conflict: {}".format(tag, " ".join(both)))
+Exception: The attributes for sayori conflict: rup rdown
 
 Windows-8-6.2.9200
 Ren'Py 7.3.5.606
 Doki Doki Cliche Club 0.0.1
-Fri Feb 04 01:44:39 2022
+Fri Feb 04 04:07:29 2022
