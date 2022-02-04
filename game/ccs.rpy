@@ -623,8 +623,23 @@ label day2:
         jump yroutestart 
     #HAHA i don't have to code monika route      
 
-
-
+label mroute:
+    stop music fadeout 1 
+    scene bg club_day
+    show monika forward happ cm ldown rdown oe at i11 
+    with fade 
+    show monika at f11 
+    m om "Hey [player]."
+    show monika cm at t11 
+    mc "Hi Monika! What's up?"
+    show monika om at f11 
+    m "Something really cool just happened. Want to hear about it?"
+    show monika cm at t11 
+    mc "Of course!"
+    show screen dialog("Unfortunately, due to unforseen circumstances, development on the Monika route is now on an indefinate hiatus. We thank you for your understanding.", ok_action=Jump("gameend"))#Quit(confirm=None))
+    $ renpy.pause(hard=True)
+label gameend:
+    $ renpy.quit()
 
 
     

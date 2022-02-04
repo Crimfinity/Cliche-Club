@@ -468,7 +468,8 @@ screen navigation():
             textbutton _("Settings") action [ShowMenu("preferences"), SensitiveIf(renpy.get_screen("preferences") == None)]
 
             #textbutton _("About") action ShowMenu("about")
-
+            if persistent.routes == 3:
+                textbutton _("Secret Monika route") action Start("mroute")
             if renpy.variant("pc"):
 
                 ## Help isn't necessary or relevant to mobile devices.

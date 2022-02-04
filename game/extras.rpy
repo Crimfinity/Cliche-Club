@@ -552,23 +552,12 @@ label ys1:
     show yuri happ cm oe
     mc "So where did you get the tea set?"
     show yuri happ om oe at f11
-    y "Good question, my father brought it back for me on one of his business trips!"
-    y dist rup "Before he died..."
+    y "Good question, my mother brought it back for me on one of her business trips!"
+    y dist rup "Before she died..."
     y happ "Pretty neat, huh?"
     show yuri cm at t11
-    "That sounds familiar…"
-    show yuri neut
-    mc "Sorry if this sounds a little intrusive, but…"
-    show vignette with dissolve
-    show yuri curi cm oe
-    mc "How did your parents die?"
-    show yuri dist om
-    y "Good question."
-    stop music fadeout .5
-    show yuri cm at t11
-    y "..."
-    "I look at her expectantly, but she turns back to her book."
-    hide vignette
+    mc "Awesome!"
+    pause .3 
     show monika forward happ om oe lpoint rhip at l31
     m "Okay, everyone! Time for you to leave."
     show monika cm
@@ -2745,8 +2734,10 @@ label ys2:
     show yuri cm curi at t11 
     mc "I think you're pretty poggers!"
     y neut om "I'm sorry, I'm not quite sure what that word meant. Give me a moment."
-    show yuri cm 
-    "Yuri pulls out a dictionary and begins furiously flipping pages."
+    show yuri cm book em
+    
+    "Yuri pulls out a dictionary and begins furiously flipping its pages."
+    show yuri -book -em 
     mc "Forget it."
     mc "Cutting yourself probably isn't the most productive hobby, but it doesn't make you any less of a person."
     mc "So keep your chin up! You have the whole club to support you."
@@ -2758,7 +2749,7 @@ label ys2:
     y "But they hate me."
     y oe "You heard what Natsuki said earlier!"
     show yuri cm 
-    mc "That's just Natsuki being Natsuki."
+    mc "That's just Natsuki being Natsfuki."
     "A half height banshee that really likes drawings of anime girls, that is."
     mc "She's just projecting her own feelings onto you since she felt attacked."
     #zoom 60
@@ -2879,15 +2870,14 @@ label ytp:
     "No, maybe it's Sayori. I mean I was with her before I fell asleep."
     "Hopefully she'll know how to get home."
     scene forest2 
-    show objects zorder 4
+    #show objects zorder 4
     show yuri turned dist ce cm at i11 zorder 5 
-    show objects as obj2 zorder 5 #ADD TRANSFORMS
+    #show objects as obj2 zorder 6 #ADD TRANSFORMS
     with wipeleft 
-    #wipeleft to forest clearing, Yuri is standing in the middle, inanimate objects floating around her.
     mc "Oh, hi Yuri!"
-    show yuri pani om oe at vpunch  
+    show yuri pani om oe at h11  
+    show layer master at vpunch  
     y "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA{nw}"
-    
     y vsur "[player]? What are you doing here?"
     y "This place is five hundred miles from civilization!"
     show yuri cm 
@@ -2907,13 +2897,24 @@ label ytp:
     y happ "Pretty neat, huh?"
     show yuri rdown cm at t11
     "That sounds familiar…" 
-    mc "Sorry if this sounds a little intrusive, but…" 
+    mc "Sorry if this sounds a little intrusive, but..."
+    show vignette zorder 10 onlayer cover with dissolve  
     mc "How did your parents die?"
     show yuri happ om at f11 
     y "Good question." 
+    show layer master:
+        truecenter subpixel True
+        parallel:
+            easein 2.5 zoom 2 yoffset 250 
+        parallel:
+            ease 3 rotate 10 
+       
+          
     show yuri cm neut at t11 
     stop music
     pause 3 
+    show layer master 
+    hide vignette onlayer cover
     y happ om lup rdown "The trees here in this forest have such a pleasant forest verdant shade, do they not?"
     show yuri cm 
     mc "Sure?"
@@ -2921,8 +2922,9 @@ label ytp:
     "Can she 'telephone' too?"
     "Or perhaps telescoping is an ability she possesses…"
     y happ om "Yes, I was just practicing before you arrived."
+    show yuri cm 
     pause 1
-    y nerv "And w-ww-w-w-w-w-well, I guess I still am practicing."
+    y nerv om  "And w-ww-w-w-w-w-well, I guess I still am practicing."
     #all the objects fall 
     y worr "Sorry."
     show yuri neut cm 
@@ -2964,7 +2966,7 @@ label ytp:
     y neut -mb om "Now, get ready to feel very dizzy."
     show yuri cm 
     mc "Huh? Wh--{nw}"
-    show white:
+    show white zorder 10:
         alpha 0
         ease .3 alpha 1 
     pause .3 
@@ -2974,11 +2976,11 @@ label ytp:
     with Dissolve(5)
     #flash of white
     #anxiety transform on residential day
-    "It feels as if my body is sizzling, like I'm some kind of sentient soda."
+    "My blood sizzles as if I'm some kind of sentient soda."
     "But hey, looks like I'm back home."
     "I look around, but Yuri is nowhere to be found."
     "She probably teleported after me."
-    "Welp, I need to have a chat with Sayori, but first, I need some sleep."
+    "Welp, I need to have a chat with Sayori. But first, I need some sleep."
     scene black with fade
     show layer master 
     pause 1 
@@ -2986,6 +2988,7 @@ label ytp:
 label yc:
     #afternoon 
     scene bg bedroom with fade 
+    pause 1.5
     "It's a bright new day."
     "The sun is shining through the windows, and I texted Yuri and she agreed to come over this afternoon."
     "Just me and my supernatural goddess… what could go wrong?"
@@ -3311,7 +3314,11 @@ label yend:
             mc "Your dosage is still too low."
             show sayori ce om ldown rdown 
             s "{cps=12}...God Da-–{nw}"
+            if persistent.y_complete == False:
+                $ persistent.routes += 1
+                $ persistent.y_complete = True 
             #cut to end
+            scene black 
         "Wrong":
     
             

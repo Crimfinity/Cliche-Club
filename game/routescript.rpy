@@ -29,7 +29,7 @@ label yroutestart:
     call ynas2 from _call_ynas2_1
     call ys2 
     call ytp 
-    call picnic
+    call trip
     call yc
     call std
     call yend 

@@ -1,5 +1,10 @@
-
-
+image eyemove:
+    block:
+        "mod_assets/MPT/yuri/yuri_turned_eyes_e1b.png"
+        .1
+        "mod_assets/MPT/yuri/yuri_turned_eyes_e1a.png"
+        .1
+        repeat 
 
 layeredimage yuri turned:
     at Flatten
@@ -101,7 +106,10 @@ layeredimage yuri turned:
         #casual
         attribute lup if_not(["rup","rcut"]) if_all(["casual"]):
             "mod_assets/MPT/yuri/yuri_turned_casual_left_up.png"
-    
+    group book:
+        attribute nobook default null 
+        attribute book:
+            "mod_assets/MPT/yuri/ybook.png"
     
     
     group nose:
@@ -296,7 +304,11 @@ layeredimage yuri turned:
             "mod_assets/MPT/yuri/yuri_turned_eyes_ela.png"
         attribute elb:
             "mod_assets/MPT/yuri/yuri_turned_eyes_elb.png"
-    
+    group eyemove:
+        attribute nomove default null 
+        attribute em:
+            "eyemove"
+            
     
     
     group eyebrows:

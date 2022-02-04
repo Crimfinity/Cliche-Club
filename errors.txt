@@ -2,9 +2,594 @@
 errors listed below, and try again.
 
 
-File "game/extras.rpy", line 2644: ATL statement contains two expressions in a row; is one of them a misspelled property? If not, separate them with pass.
-    truecenter supbixel True xoffset 0 zoom 1.7 yoffset 200 
-                        ^
+File "game/extras.rpy", line 2751: end of line expected.
+(Perhaps you left out a " at the end of the first line.)
+    show yuri -book -em  make you any less of a person."
+                                                      ^
+        mc "So keep your chin up! You have the whole club to support you."
+        show yuri dist rdown lup om
+        y "B-b-b-b--b-b-b-b-b-b-b-b-b-b-b-b-b-b-b-b-b--bb--b-b"
+        show yuri cry cm ce at s11 
+        "Yuri has trouble speaking as tears begin forming around her eyes."
+        show yuri om at t11 
+        y "But they hate me."
+        y oe "You heard what Natsuki said earlier!"
+        show yuri cm 
+        mc "That's just Natsuki being Natsuki."
+        "A half height banshee that really likes drawings of anime girls, that is."
+        mc "She's just projecting her own feelings onto you since she felt attacked."
+        #zoom 60
+        #wait why the fuck would I zoom 60?
+        #also mcs last line is fucking stupid
+        #oh well, I don't care enough about this mod anymore
+        y om "I see."
+        show yuri sad ce 
+        "Yuri wipes some tears from her cheek, getting blood on it."
+        mc "You uh… may want to go wash off in the bathroom."
+        mc "We can talk about getting you some help some other time."
+        y nerv om "Alright. t-t-t-thank you, [player]."
+        show yuri cm 
+        mc "Anytime."
+        mc "I'll walk you back to the club when you're ready."
+        y neut om oe "Right."
+        show yuri cm 
+        scene corridor_r with dissolve 
+        "This time, there were no voices inside the clubroom."
+        "Just silence."
+        mc "You ready?"
+        #breath posing
+        #yeah fuck that im lazy
+        show yuri turned neut cm oe at t11 
+        "She nods."
+        scene club_r with wipeleft_scene
+        "Hearing the door open, Natsuki gets up from the corner where she had been hunched up."
+        show natsuki cross dist oe om at l21 
+        n "...Hey."
+        show natsuki turned dist oe cm  
+        show yuri turned dist ldown rdown at t22 
+        y "Hi."
+        show yuri turned cm at t22 
+        show natsuki curi om rhip ldown 
+        n "So, the weather today..."
+        show natsuki cm 
+        show yuri happ ce om at f22 
+        y "Indeed, it is quite pleasant."
+        y oe "The clouds, with the hue of our uniforms, drifting across the sky."
+        y neut "The rain, dropping peacefully to the ground."
+        y curi "And who could forget the crackling that occasionally interrupts our speech?"
+        play sound "mod_assets/thunder.mp3"
+        show natsuki neut om at f21 
+        show yuri cm at t22 
+        n "Yuri, we're in a thunderstorm."
+        show natsuki cm at t21 
+        y dist om "...Right."
+        show natsuki curi ldown rdown om at f21 
+        show yuri cm 
+        n "You find that pleasant?"
+        show natsuki cm at t21
+        show yuri shy om oe at f22 
+        y "I do."
+        show yuri cm at t22  
+        show natsuki laug ce om at f21 
+        n "Heh. You're so weird, Yuri!"
+        show yuri om at s22  
+        show natsuki cm oe neut at t21 
+        y "Uuuuuuuuuuuuuuuuuuuuuuuuuuuuuu..."
+        show yuri cm 
+        show natsuki sad om at f21 
+        n "I mean that in a good way. Like, {w=.5}I enjoy hearing you talk about things."
+        n ce dist "Look, I'm sorry for being a bitch earlier."
+        show natsuki cm at t21 
+        show yuri turned dist om lup rup at f22
+        y "I'm… also sorry. For not ever taking you seriously."
+        show yuri cm at t22 
+        n oe om "Thanks."
+        show natsuki neut om lhip rdown at f21 
+        n "So, we cool?"
+        show natsuki cm at t21 
+    
+        #thunder 
+        show yuri happ om at f22 
+        y "Yes."
+        show yuri cm at t22 
+        show sayori turned happ ce om zorder 3 at h11 
+        s "Hooray for friendship!"
+        show sayori cm 
+        "It seems the two of them made up for their quarrel from earlier."
+        show sayori at thide 
+        show yuri at thide 
+        show natsuki at thide 
+        hide sayori 
+        hide yuri  
+        hide natsuki 
+        show monika lean happ om oe at t11 
+        m "Okay, everyone!"
+        show monika forward lpoint rhip happ ce om
+        m "It's time for us all to head home."
+        show monika cm oe neut at t22
+        show natsuki turned lhip curi om oe at t21  
+        "Natsuki" "\"Shouldn't we wait until this storm stops, {w=.1}{nw}"
+        #monika disappears
+        show monika:
+            alpha 1 
+            easeout_quint .3 alpha 0
+        n "Shouldn't we wait until this storm stops, {fast}Monik--"
+        show natsuki lsur cm at t11 
+        n "..."
+        show natsuki cross angr om ce at f11  
+        n "Motherfuc--{nw}"
+        scene black
+        stop music 
+        pause 1.5
+        return
+    label ytp:
+        scene forest with fade 
+        pause 5 
+        #zoom for 999 seconds
+        "Where am I?{fast}"
+        #"I barely leave my room, much less go exploring in a forest."
+        "What the hell did Sayori put in that cookie she gave me earlier!?"
+        "I should've known by the fact that she willingly gave up her food that there was something up."
+        pause .5
+        "I hear faint rusting in the distance as I take in my surroundings."
+        "Oh god, am I going to get eaten by a bear?"
+        "No, maybe it's Sayori. I mean I was with her before I fell asleep."
+        "Hopefully she'll know how to get home."
+        scene forest2 
+        show objects zorder 4
+        show yuri turned dist ce cm at i11 zorder 5 
+        show objects as obj2 zorder 5 #ADD TRANSFORMS
+        with wipeleft 
+        #wipeleft to forest clearing, Yuri is standing in the middle, inanimate objects floating around her.
+        mc "Oh, hi Yuri!"
+        show yuri pani om oe at vpunch  
+        y "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA{nw}"
+        
+        y vsur "[player]? What are you doing here?"
+        y "This place is five hundred miles from civilization!"
+        show yuri cm 
+        mc "I dunno, I… walked?"
+        show yuri om vsur at f11 
+        y "We're on an island!"
+        show yuri cm lsur at t11 
+        mc "It seems I learned how to swim."
+        "I'm completely dry though…"
+        mc "Speaking of which, how did you get here then?"
+        y neut om ldown "I can teleport."
+        show yuri cm
+        mc "You can? How'd you manage that?"
+        show yuri oe om at f11
+        y "Good question, my father learned it on one of his business trips!" 
+        y dist rup "Before he died..."
+        y happ "Pretty neat, huh?"
+        show yuri rdown cm at t11
+        "That sounds familiar…" 
+        mc "Sorry if this sounds a little intrusive, but…" 
+        mc "How did your parents die?"
+        show yuri happ om at f11 
+        y "Good question." 
+        show yuri cm neut at t11 
+        stop music
+        pause 3 
+        y happ om lup rdown "The trees here in this forest have such a pleasant forest verdant shade, do they not?"
+        show yuri cm 
+        mc "Sure?"
+        mc "So anyways, telekinesis and teleportation, huh? That's pretty impressive."
+        "Can she 'telephone' too?"
+        "Or perhaps telescoping is an ability she possesses…"
+        y happ om "Yes, I was just practicing before you arrived."
+        pause 1
+        y nerv "And w-ww-w-w-w-w-well, I guess I still am practicing."
+        #all the objects fall 
+        y worr "Sorry."
+        show yuri neut cm 
+        mc "No worries."
+        show yuri curi om at f11  
+        y "Did you need help getting back home?"
+        show yuri cm at t11 
+        mc "I don't think I have enough energy to get back, so yes."
+        y neut om "Understood. In that case, I will teleport you to your home."
+        y "We need to make physical contact and then we'll be off."
+        show yuri lsur cm 
+        mc "Like a piggyback ride?"
+        y flus om "I think just holding hands would be easier."
+        show yuri cm at t11 
+        mc "Oh, sounds good."
+        show layer master:
+            truecenter 
+            ease 1.5 zoom 1.15 
+        "I walk through the clearing and (after narrowly avoiding tripping over a branch,) grip Yuri's hand with my own." 
+        y nerv om n3 "Uuuuuuuuu."
+        show yuri cm -n3 
+        mc "What's wrong?"
+        show yuri lsur om at hf11 
+        y "N-n-n-n-n-n-n-nothing! It's just… your… skin… is warm."
+        show yuri cm at t11
+        mc "Well yeah? All humans kinda are."
+        show yuri laug om at f11 
+        y "Ah. I've never actually touched one before."
+        show yuri neut cm at t11 
+        #"What's that supposed to mean?"
+        mc "Sooooo...  teleporting?"
+        y nerv om "Right, sorry. You probably think I'm weird now…"
+        show yuri cm at t11 
+        mc "It's like Natsuki said, only the good kind."
+        show yuri dist 
+        pause 1 
+        show yuri mb 
+        y "Thank you, [player]."
+        y neut -mb om "Now, get ready to feel very dizzy."
+        show yuri cm 
+        mc "Huh? Wh--{nw}"
+        show white:
+            alpha 0
+            ease .3 alpha 1 
+        pause .3 
+        scene white 
+        scene bg house_night 
+        show layer master at anxiety 
+        with Dissolve(5)
+        #flash of white
+        #anxiety transform on residential day
+        "It feels as if my body is sizzling, like I'm some kind of sentient soda."
+        "But hey, looks like I'm back home."
+        "I look around, but Yuri is nowhere to be found."
+        "She probably teleported after me."
+        "Welp, I need to have a chat with Sayori, but first, I need some sleep."
+        scene black with fade
+        show layer master 
+        pause 1 
+        return 
+    label yc:
+        #afternoon 
+        scene bg bedroom with fade 
+        "It's a bright new day."
+        "The sun is shining through the windows, and I texted Yuri and she agreed to come over this afternoon."
+        "Just me and my supernatural goddess… what could go wrong?"
+        "But before she comes, I should stop by Sayori's place and follow up about yesterday."
+        scene bg residential_day 
+        show yuri turned lsur casual cm oe at face 
+        show layer master at vpunch 
+        mc "Ah!"
+        show yuri pani om lup rup at t11
+        y "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+        show yuri dist ce cm 
+        mc "Oh! H-hi Yuri, you're… a little early."
+        "Five hours early to be specific."
+        show yuri flus om oe at hf11 
+        y "I j-just thought I'd come sooner. As they say, the early bird gets the worm."
+        show yuri worr cm at t11 
+        mc "Does that make me a worm?"
+        show yuri om 
+        y "Nnnno not at all! I'm sorry!"
+        show yuri cm 
+        mc "Calm down, I'm just messing with you."
+        show yuri sad om rdown lup  
+        y "You are?"
+        show yuri cm 
+        mc "Yes?"
+        y neut om "Oh."
+        show yuri cm 
+        mc "Well it's good to see you. What do you say we go get some food?"
+        show yuri happ om ce at f11
+        y "Ah, yes, a human bonding exercise."
+        show yuri cm at t11 
+        mc "Exactly."
+        scene bg rr with fade 
+        "Ah, here we are at this nondescript upscale cafe."
+        "It definitely isn't a fast food restaurant that the developers were too lazy to grab a new background for to replace."
+        "That would be blasphemy."
+        "This is a high quality mod that hasn't been {i}mostly forgotten{/i} for 15 months!"
+        "We would never stoop so low as to–{nw}"
+        show yuri turned casual happ oe om at t11 
+        y "This place seems very pleasant."
+        show yuri cm 
+        mc "Agreed."
+        "The two of us sit in silence as we peer at the {a=https://www.variousartists.fun/menu}menu{/a}, trying to decide what scrumptious food we plan to devour."
+        $ w_name = "Waiter"
+        w "Can I get you two started on drinks tonight?"
+        mc "Just water."
+        w "And for you?"
+        show yuri dist with dissolve
+        pause 2
+        mc "Uhh… Yuri?"
+        "She doesn't respond."
+        mc "I guess just water for her too?"
+        w "Alright."
+        "The waiter walks off."
+        mc "Too shy to order?"
+        show yuri anno om ce rup n3 at f11 
+        y "I-I'm not just shy, I have a mortifying fear of waiters!"
+        show yuri doub cm oe at t11 
+        mc "Waiters specifically?"
+        show yuri angr om lup rup 
+        y "Yes! How they just stand there, looking down on you, their judgemental eyes, [player]. Those eyes are part of only the worst of my nightmares."
+        y ce "Who knows what they're writing on their little notepads? What secrets lie on those pages? They could be cursing us for all we know."
+        show yuri neut cm oe 
+        mc "Huh. Well I think you're the only one in this building capable of cursing somebody."
+        y ce dist om rdown "I suppose you're right."
+        show yuri cm 
+        mc "Do you want me to order for you?"
+        show yuri neut om oe ldown rdown 
+        y "I simply need to prepare myself."
+        show yuri cm at t11     
+        mc "I'll take your word for it."
+        "We both return to our respective menus until the waiter returns."
+        w "Are you two ready to order?"
+        "Yuri nods her head."
+        mc "I think so."
+        w "What can I get you started with?"
+        mc "Just water."
+        w "...And for your meal?"
+        mc "{i}Waters enough{/i}."
+        w "Alright then."
+        "The waiter turns to address Yuri."
+        w "And for you?"
+        "Yuri musters all of her courage by taking a deep breath."
+        show yuri om flus ce n3 at t11 
+        y "Steak, please."
+        show yuri lsur oe cm 
+        w "And how would you like that cooked?"
+        window hide 
+        pause 3 
+        scene house_n with fade 
+        #long pause and fade to lack because I can't be fucked to continue this scene
+    
+    
+        "After eating a delicious meal, Yuri kindly teleported me home."
+        mc "Man, I'm stuffed. That was some great food."
+        show yuri turned doub casual om oe ldown rdown at t11 
+        y "All you had was water."
+        show yuri cm curi 
+        mc "If you drink enough water it's basically food."
+        show yuri dist om rup n3 at f11 
+        y "I'll… take your word for it."
+        show yuri cm neut -n3 at t11 
+        
+        mc "Well, guess I'll see you at school."
+        y nerv n3 om lup rup "Y-y-y-y-y-y-y-y-y-es."
+        show yuri cm at t11 
+        "Hmm."
+        "I feel like there's something missing from this scene."
+        "Oh, I got it!"
+        scene black
+        "We then kiss or something."
+        "It's pretty cool."
+        scene bg house_n 
+        show yuri pani ce om n3 at i11 
+        with fade 
+        y "UUUUUUUwUUUUUUU."
+        show yuri cm 
+        mc "...So what's up with you and the letter u?"
+        y neut om oe "It happens to be my favorite letter."
+        show yuri cm 
+        mc "Huh."
+        return
+    label yend:
+        scene fountain with fade 
+        #"It's a nice afternoon, the air is fresh and my balls are fresher."
+        "It's a nice, post club afternoon."
+        show yuri turned neut cm oe e1b 
+        "I notice Yuri is reading her painting thing on the edge of the fountain."
+        "Before I can call out to her, another guy does."
+        "He seems familiar..."
+        "What scene was he from again?"
+        b "Hey, freak!"
+        "Yuri shows no reaction, likely because she has been consumed by the contents of her book."
+        b "I'm talking to you!"
+        show yuri lsur -e1b oe at h11 
+        "The guy, who I think was named Edward, grabs Yuri by her shoulder and gives her a shake."
+        "{i}It would be impactful for you to see this, or for Edward to have a sprite, but we've got a budget.{/i}"
+        y om "H-huh!?"
+        show yuri cm 
+        b "You think you're so cool? You and your… posture."
+        y worr om "C-can I help you?"
+        show yuri curi cm 
+        b "Yeah sure, say hi to the fishies for me."
+        y om "The fishie{nw}"
+        show yuri vsur cm at falldown
+        hide yuri 
+        "WIthout warning, (other than the ominous line about 'fishies') Edward shoves Yuri into the fountain."
+        mc "Yuri!"
+        "I run towards the fountain."
+        "Peering in, Yuri is nowhere to be found."
+        "Guess she teleported."
+        "Putting Yuri's safety aside for a moment, I turn to Edward."
+        "But he's nowhere to be found either."
+        "Guess he teleported?"
+        "Oh well. Problem for later."
+        "What's really important is finding and checking in on Yuri."
+        "I might know where to find her, but getting there will be an issue."
+        scene bg residential_day with wipefast
+        scene bg sayori_bedroom 
+        show sayori turned casual neut cm oe at i11 
+        with wipefast 
+        mc "Hey Sayori!"
+        show sayori happ om lup rdown at f11 
+        s "Hey [player]. What can I do for y–{nw}"
+        show sayori curi cm at t11
+        mc "Hold on. I think I'm forgetting something."
+        pause 1.5 
+        "Right!"
+        scene black with wipeleft  
+        "I leave the room."
+        "I gently open the door."
+        play sound opend
+        scene bg sayori_bedroom 
+        show sayori turned casual anno cm oe at i11  
+        with wipeleft_door
+        mc "Sayori?"
+        show sayori om at f11 
+        s "Yes, [player]. I'm still here."
+        s sedu "Now, were you interested in buying a self-defense noose? Perhaps a landmine even?"
+        s mb "Or maybe even a cookie!{nw}"
+        show sayori sad cm at t11 
+        mc "No!"
+        mc "Wait."
+        show sayori neut 
+        mc "The cookie. I'll take a cookie."
+        show sayori happ om ce rup ldown at f11 
+        s "Sure thing! One self-defense cookie, coming right up!"
+        show sayori cm oe neut at t11 
+        mc "What makes it 'self defense'?"
+        s dist om "Well I figured it would be a lot more acceptable to have a 'self-defense' noose than it would to have a regular one…"
+        show sayori happ om at f11 
+        s "So I applied the concept to mercury-filled cookies."
+        show sayori cm rdown 
+        mc "That… makes sense?"
+        mc "Hold on… mercury!?"
+        show sayori lup rup om ce at f11 
+        s "Yeah! Aren't they neat? They're super shiny on the inside!" 
+        show sayori cm at t11 
+        mc "So was I just your R&D when I ate one."
+        show sayori om neut oe ldown rdown at f11 
+        s "Yeah, pretty much."
+        s dist "Clearly the dosage was too low."
+        s happ lup  "I can sell you one with the proper amount if you'd like~"
+        show sayori cm at t11 
+        mc "...I'm good."
+        mc "But if you have any leftovers of the old ones, I'll could use some of those."
+        s neut om "I have some left over." 
+        s dist rup ldown "I was gonna  give them to the club, but you can take em."
+        show sayori cm neut 
+        mc "Yes please."
+        show sayori at d11 
+        "She hands me the cookies."
+        "After shoving two of them in my pockets, I jam the cookie in my mouth."
+        "{i}Disclaimer: please do not try this at home.{/i}"
+        scene forest with fade 
+        window hide 
+        pause 1 
+        mc "Worked like a charm!"
+        "Man, Sayori sure is a lifesaver!"
+        scene forest2 with dissolve 
+        "I continue through the woods until I find Yuri."
+        "She's lying on the ground, holding what looks to be an empty bottle in her hand."
+        "Once I get close, she notices me and stands up."
+        show yuri turned lup rup yand om oe at h11 
+        y "Just on time!"
+        show yuri cm 
+        mc "Hey Yuri. You feeling okay?"
+        y yand om "I feel incredible!"
+        #yuri pulls off the knife
+        show yand om at f11 
+        y "I'm a yandere now!"
+        #"Woah! That was a shift."
+        "DId the fountain incident bring this on or the bottle?"
+        mc "Where did you get the knife?"
+        show yuri oe om happ at f11
+        
+        
+    
+        y "Good question, my sister brought it back for me on one of her business trips!" 
+        y dist rup "Before she killed my parents..."
+        y yand "Pretty neat, huh?"
+        show yuri rdown cm at t11    
+        mc "Uh..."
+        "This may be where I die."
+        "Im pretty sure my life is riding on how I go about calming her down."
+        #menu between right and wrong
+        menu:
+            
+            "Right":
+    
+                "Aw fuck it. I've got no better ideas."
+                show layer master:
+                    truecenter 
+                    easein_quint .4 zoom 1.4 yoffset 400 
+                show yuri lsur ldown rdown 
+                "I grab a cookie out of my pocket and jam it into Yuri's mouth."
+                window hide 
+                pause .3
+                show yuri ce 
+                pause .1 
+                show yuri neut oe 
+                pause .1
+                show yuri ce 
+                pause .1 
+                show yuri oe 
+                pause 1.5
+                show layer master:
+                    truecenter zoom 1.4 yoffset 400
+                    easein_quint .4 zoom 1 yoffset 0
+                show yuri shy n3 om oe  
+                y "uuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuu"
+                show yuri flus om oe n3 at hf11  
+                y "S-s-s-ss–s-s-sorry I wanted to stab you previously."
+                show yuri cm at t11 
+                "There we go, back to normal."
+                mc "No worries."
+                "I could never hold anything against Yuri."
+                "Waifuism, fuck yeah!"
+                mc "Are you… feeling okay?"
+                show yuri -n3 neut om oe lup rdown 
+                y "I'm doing quite fine."
+                show yuri cm 
+                mc "Well just that I love you, and I think you're very poggers."
+                y happ om "Thank you, [player]."
+                show yuri cm 
+                mc "So did you want to call it a day or…"
+                y neut om "We could finish {i}Portrait of Markov{/i}."
+                y pani "I-i-i-i-i-if you want to!"
+                show yuri happ ce cm 
+                mc "I'd love to."
+                show yuri om 
+                y "Lovely."
+                show yuri cm 
+                "We lay on a log and begin reading."
+                "Hours pass."
+                show layer master:
+                    truecenter 
+                    ease 100 zoom 0 alpha 0
+                "Then those hours turn into days, and the days turn into weeks."
+                "Months turn into years and so on."
+                "I lost track of time long ago."
+                "And yet, we have made no progress on reading the portrait of the markov."
+                "It's length may very well be infinite."
+                "No matter how coordinated our page turning is, it seems new pages are spawned into existence faster."
+                "We grow old and frail, yet we continue on."
+                show layer master
+                show sayori turned casual happ ce om rup rdown at if11 
+    
+                show yuri vsur at i31 
+                s "Hey you guys!"
+                show yuri om at f31 
+                show sayori curi oe ldown cm at t11
+                y "AAAAH!"
+                show yuri sad ce cm at t31 
+                mc "Hey Sayori. How'd you find this place?"
+                show sayori lsur om lup rup at f11 
+                s "I dunno, I… walked?"
+                show sayori cm rdown at t11 
+                pause 3 
+                show sayori happ om oe at f11  
+                s "{cps=10}...Is this heaven?"
+                show sayori cm anno at t11 
+                mc "Your dosage is still too low."
+                show sayori ce om ldown rdown 
+                s "{cps=12}...God Da-–{nw}"
+                #cut to end
+            "Wrong":
+        
+                
+                mc "Damn, that's hot!"
+                show yuri om at f11 
+                y "I'm glad you think so!"
+                show yuri at hf11 
+                show stab onlayer front:
+                    alpha 0 
+                    easein_quint .25 alpha 1 
+                    ease .5 alpha 0 
+                pause .25 
+                scene black 
+                #stab effect
+                "Yuri stabs me. {i}Seductively{/i}."
+                "She keeps on slashing me until I'm filled with more holes than a sponge."
+                mc "...You do have some kind of healing magic, right?"
+                y "Nope!"
+                #cut to black 
+                #the end
+                #Disclaimer: Please don't consume mercury or let a drunk girl stab you 
 
 Ren'Py Version: Ren'Py 7.3.5.606
-Thu Feb 03 01:23:57 2022
+Fri Feb 04 01:05:05 2022
