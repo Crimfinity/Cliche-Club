@@ -1,7 +1,101 @@
 
 #Because of how Natsuki's faces are able to interchange across poses - unlike everyone else - her logic and coding is different.  First off, to try and cut down on having definitions repeated and in so many places across the script, the first block of code here are a bunch of in-between image definitions that the rest of the definitions use below.  This was done so that if something needed to be changed in the file path/structure/whatnot, there is *one* place to fix it, and not 2 or more.
 #The tags used for the image definitions themselves are referenced later in this doc, where they're necessary to be used.  Since the tags themselves are short enough and unique enough in name, if changes need to be enacted on *those* parts of the code, a find/replace will be quicker to do.
+image sprite_blank:
+    alpha 0.0
+    "mod_assets/MPT/natsuki/_blink_am.png"
 
+image _nat_blink_a:
+    alpha 0.0
+    renpy.random.randint(20, 100)*0.1
+    choice:
+        alpha 1.0
+        "mod_assets/MPT/natsuki/_blink_am.png"
+        0.015
+        "mod_assets/MPT/natsuki/_blink_af.png"
+        0.035
+        "mod_assets/MPT/natsuki/_blink_am.png"
+        0.015
+    choice:
+        alpha 1.0
+        "mod_assets/MPT/natsuki/_blink_am.png"
+        0.015
+        "mod_assets/MPT/natsuki/_blink_af.png"
+        0.065
+        "mod_assets/MPT/natsuki/_blink_am.png"
+        0.015
+    choice:
+        alpha 1.0
+        "mod_assets/MPT/natsuki/_blink_am.png"
+        0.015
+        "mod_assets/MPT/natsuki/_blink_af.png"
+        0.095
+        "mod_assets/MPT/natsuki/_blink_am.png"
+        0.015
+    choice:
+        alpha 1.0
+        "mod_assets/MPT/natsuki/_blink_am.png"
+        0.015
+        "mod_assets/MPT/natsuki/_blink_af.png"
+        0.035
+        "mod_assets/MPT/natsuki/_blink_am.png"
+        0.015
+        alpha 0.0
+        0.15
+        alpha 1.0
+        "mod_assets/MPT/natsuki/_blink_am.png"
+        0.015
+        "mod_assets/MPT/natsuki/_blink_af.png"
+        0.035
+        "mod_assets/MPT/natsuki/_blink_am.png"
+        0.015
+    repeat
+
+image _nat_blink_s_a:
+    alpha 0.0
+    renpy.random.randint(30, 60)*0.1
+    choice:
+        alpha 1.0
+        "mod_assets/MPT/natsuki/_blink_s_am.png"
+        0.015
+        "mod_assets/MPT/natsuki/_blink_s_af.png"
+        0.035
+        "mod_assets/MPT/natsuki/_blink_s_am.png"
+        0.015
+    choice:
+        alpha 1.0
+        "mod_assets/MPT/natsuki/_blink_s_am.png"
+        0.015
+        "mod_assets/MPT/natsuki/_blink_s_af.png"
+        0.065
+        "mod_assets/MPT/natsuki/_blink_s_am.png"
+        0.015
+    choice:
+        alpha 1.0
+        "mod_assets/MPT/natsuki/_blink_s_am.png"
+        0.015
+        "mod_assets/MPT/natsuki/_blink_s_af.png"
+        0.095
+        "mod_assets/MPT/natsuki/_blink_s_am.png"
+        0.015
+    choice:
+        alpha 1.0
+        "mod_assets/MPT/natsuki/_blink_s_am.png"
+        0.015
+        "mod_assets/MPT/natsuki/_blink_s_af.png"
+        0.035
+        "mod_assets/MPT/natsuki/_blink_s_am.png"
+        0.015
+        alpha 0.0
+        0.15
+        alpha 1.0
+        "mod_assets/MPT/natsuki/_blink_s_am.png"
+        0.015
+        "mod_assets/MPT/natsuki/_blink_s_af.png"
+        0.035
+        "mod_assets/MPT/natsuki/_blink_s_am.png"
+        0.015
+    repeat
 #First block is for the "forward" face attributes:
 image ntl:
     "mod_assets/MPT/natsuki/natsuki_turned_towel_left_down.png"
@@ -472,7 +566,14 @@ layeredimage natsuki turned:
         attribute e0b:
             "nat_ff_e0b"
     
-    
+    group blink if_all(["ff"]) if_not(["fta","fs"]):
+
+        anchor (0,0) subpixel (True)
+
+        attribute blink_a default if_not(["ce","e4a","e4b","e4c", "e4d", "e4e", "e1e", "e1f"]):
+            "_nat_blink_a"
+        attribute no_blink:
+            "sprite_blank"
     
     group eyebrows if_all(["ff"]) if_not(["fta","fs"]): #eyebrows.
         
@@ -657,7 +758,12 @@ layeredimage natsuki turned:
         attribute e6:
             "nat_fs_e6"
     
-    
+    group blink if_all(["fs"]) if_not(["fta","ff"]):
+
+        anchor (0,0) subpixel (True)
+
+        attribute blink_a default if_not(["ce","e4","e5","e6","n5","bful"]):
+            "_nat_blink_s_a"
     
     group eyebrows if_all(["fs"]) if_not(["ff","fta","n5","bful"]): #Cannot show if full-face blush is present.
         
@@ -961,7 +1067,16 @@ layeredimage natsuki cross:
             "nat_ff_e0a"
         attribute e0b:
             "nat_ff_e0b"
-    
+    group blink if_all(["ff"]) if_not(["fta","fs"]):
+
+        anchor (0,0) subpixel (True)
+        xoffset (18)
+        yoffset (22)
+
+        attribute blink_a default if_not(["ce","e4a","e4b","e4c", "e4d", "e4e", "e1e", "e1f"]):
+            "_nat_blink_a"
+        attribute no_blink:
+            "sprite_blank"
     
     
     group eyebrows if_all(["ff"]) if_not(["fta","fs"]): #eyebrows.
@@ -1162,7 +1277,14 @@ layeredimage natsuki cross:
         attribute e6:
             "nat_fs_e6"
     
-    
+    group blink if_all(["fs"]) if_not(["fta","ff"]):
+
+        anchor (0,0) subpixel (True)
+        xoffset (18)
+        yoffset (22)
+
+        attribute blink_a default if_not(["ce","e4","e5","e6","n5","bful"]):
+            "_nat_blink_s_a"
     
     group eyebrows if_all(["fs"]) if_not(["ff","fta","n5","bful"]): #Cannot show if full-face blush is present.
         

@@ -761,11 +761,11 @@ label ynas2:
         mc "Maybe someday. But only after the scene where we go to a cafe and say it's not a date while nervously holding hands."
     else:
         mc "Maybe someday, but only after she moves in with me."
-    show sayori lsur cm oe
+    show sayori lsur cm oe no_blink
     pause .1
     show sayori ce
     pause .1 
-    show sayori oe
+    show sayori oe -no_blink
     "Sayori blinks a little."
     s rdown "Oh… Alright."
     show sayori curi om ldown at f11
@@ -2561,7 +2561,7 @@ label ys2:
     show sayori turned cm neut ce at t21
     pause 1.5 
     show monika anno oe ldown rhip 
-    show sayori lsur oe 
+    show sayori lsur oe no_blink
     pause .15 
     show sayori lsur ce 
     pause .15 
@@ -2569,7 +2569,7 @@ label ys2:
     pause .15 
     show sayori ce 
     pause .15 
-    show sayori oe 
+    show sayori oe -no_blink
     pause .5 
     scene bg closet
     show yuri turned dist oe cm lup rup at t11 
@@ -2600,7 +2600,7 @@ label ys2:
         ease 3 yoffset -1620 xoffset 2500 zoom 7
     #pan to really tiny natsuki
     pause 1
-    stop music fadout 1.5 
+    stop music fadeout 1.5 
     pause 2 
     "I don't really feel any of Natsuki's charm rubbing off on me."
     "Maybe if I was into children..."
@@ -2878,8 +2878,10 @@ label ytp:
     "No, maybe it's Sayori. I mean I was with her before I fell asleep."
     "Hopefully she'll know how to get home."
     scene forest2 
-    #show objects zorder 4
+    show obj1 zorder 4 at obj(-330,-115,.2,30)
     show yuri turned dist ce cm at i11 zorder 5 
+    show obj2 zorder 6 at obj(-200,-80,.33,11)
+    show obj3 zorder 6 at obj(350,-50,.07,17)
     #show objects as obj2 zorder 6 #ADD TRANSFORMS
     with wipeleft 
     mc "Oh, hi Yuri!"
@@ -2933,8 +2935,19 @@ label ytp:
     show yuri cm 
     pause 1
     y nerv om  "And w-ww-w-w-w-w-well, I guess I still am practicing."
-    #all the objects fall 
-    y worr "Sorry."
+    
+    show obj1:
+        easein .25 yoffset 1300
+    show obj2:
+        easein .4 yoffset 1300
+    show obj3:
+        easein .4 yoffset 1300
+    show yuri cm 
+    pause 1.5
+    hide obj1
+    hide obj2 
+    hide obj3 
+    y worr om "Sorry."
     show yuri neut cm 
     mc "No worries."
     show yuri curi om at f11  
@@ -3088,7 +3101,8 @@ label yc:
     y "Steak, please."
     show yuri lsur oe cm 
     w "And how would you like that cooked?"
-    window hide stop music fadeout 3 
+    window hide 
+    stop music fadeout 3 
     pause 3 
     scene bg house_night with fade 
     #long pause and fade to lack because I can't be fucked to continue this scene
@@ -3269,13 +3283,13 @@ label yend:
             "I grab a cookie out of my pocket and jam it into Yuri's mouth."
             window hide 
             pause .3
-            show yuri ce 
+            show yuri ce no_blink
             pause .1 
             show yuri neut oe 
             pause .1
             show yuri ce 
             pause .1 
-            show yuri oe 
+            show yuri oe -no_blink
             pause 1.5
             show layer master:
                 truecenter zoom 2.5 yoffset 400
@@ -3305,7 +3319,7 @@ label yend:
             show yuri om 
             y "Lovely."
             show yuri cm 
-            stop music 50
+            stop music fadeout 0.550
             "We lay on a log and begin reading."
             "Hours pass."
             show layer master:

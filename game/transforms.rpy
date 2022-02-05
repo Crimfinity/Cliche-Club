@@ -1,3 +1,14 @@
+transform obj(x,y,z,p):
+    truecenter subpixel True
+    zoom z 
+    yoffset y 
+    xoffset x
+    block:
+        ease 3 yoffset y+p
+        ease 3 yoffset y-p
+        repeat
+    on hide:
+        ease .7 ypan 1300 
 transform tlow(x=640, z=0.80):
     yanchor 1.0 subpixel True
     on show:
