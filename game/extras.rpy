@@ -424,7 +424,7 @@ label ys1:
     "I offer her a hand."
     "Pulling herself off the ground, Yuri reaches to grab it, but comes up short."
     "Now how can I get her up here?"
-    show sayori turned lup rnoose happ om oe at l31
+    show sayori turned lup rup happ om oe at l31
     s "Sayori to the rescue!!!"
     show sayori cm
     "I turn to see Sayori, holding a noose."
@@ -717,7 +717,7 @@ label ns1:
     show natsuki turned pout ldown rdown at f11
     n "Don't forget what you said earlier, okay?"
     show natsuki happ cm at t11
-    mc "I won;t. Promise."
+    mc "I won't. Promise."
     window hide
     scene black with dissolve
     pause 2
@@ -770,7 +770,7 @@ label ynas2:
     s rdown "Oh… Alright."
     show sayori curi om ldown at f11
     s "And how long will that take?"
-    show sayori cm at t11
+    show sayori cm blink_a at t11
     "I shrug."
     if y_route == True:
         mc "Eh. I dunno."
@@ -1193,7 +1193,7 @@ label nh1:
 
 
     scene bg kitchen with dissolve_scene_full 
-    show natsuki turned cm oe neut casual at t11 
+    show natsuki turned cm oe neut at t11 
     mc "This looks pretty good, thanks Natsuki."
     show natsuki ce om anno at f11 
     n "It would've been better if you had more food in your kitchen."
@@ -2755,7 +2755,7 @@ label ys2:
     y "But they hate me."
     y oe "You heard what Natsuki said earlier!"
     show yuri cm 
-    mc "That's just Natsuki being Natsfuki."
+    mc "That's just Natsuki being Natsuki."
     "A half height banshee that really likes drawings of anime girls, that is."
     mc "She's just projecting her own feelings onto you since she felt attacked."
     #zoom 60
@@ -3235,7 +3235,7 @@ label yend:
     show sayori at d11 
     "She hands me the cookies."
     "After shoving two of them in my pockets, I jam the cookie in my mouth."
-    "{i}Disclaimer: please do not try this at home.{/i}"
+    "{b}Disclaimer:{/b}{i} please do not try this at home.{/i}"
     scene forest with fade 
     window hide 
     pause 1 
@@ -3333,7 +3333,7 @@ label yend:
             "No matter how coordinated our page turning is, it seems new pages are spawned into existence faster."
             "We grow old and frail, yet we continue on."
             "Our hearts no longer flutter as our souls fester."
-            "Are even here anymore?"
+            "Are we even here anymore?"
             "Do we even exist?"
             "But where is 'here', anyways?"
             "No seriously, I have no clue where this island is located."

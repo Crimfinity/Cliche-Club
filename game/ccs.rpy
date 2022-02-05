@@ -425,7 +425,7 @@ label modthing:
             mc "Are you okay, though, Yuri?" 
             show yuri bful at s11
             "Yuri buries her face in her hands."  
-            y n4 om "I guess that's why we're the only ones in here, then…" 
+            y n4 oe om "I guess that's why we're the only ones in here, then…" 
             "I begin to hear sniffles."
             show monika forward ldown rdown dist om oe at t22
             show yuri at t21
