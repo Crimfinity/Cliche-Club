@@ -2530,6 +2530,7 @@ label send2:
 
 label ys2:
     scene bg corridor with fade 
+    play music t3 fadein 1 
     window hide 
     pause .45
     "I approach the clubroom door, and hear voices going to and fro." 
@@ -2598,10 +2599,13 @@ label ys2:
         subpixel True yoffset 200 zoom 1.7
         ease 3 yoffset -1620 xoffset 2500 zoom 7
     #pan to really tiny natsuki
-    pause 3 
+    pause 1
+    stop music fadout 1.5 
+    pause 2 
     "I don't really feel any of Natsuki's charm rubbing off on me."
     "Maybe if I was into children..."
     "But alas."
+    play music t7 
     n om lhip "...It's like I told you yesterday, MANGA IS LITERATURE!"
     show natsuki cm
     show layer master:
@@ -2652,6 +2656,7 @@ label ys2:
     
 
     #zoom in on natsuki, hide monika and sayori
+    stop music fadeout 1.5 
     pause .5
     "..."
     scene bg closet 
@@ -2721,6 +2726,7 @@ label ys2:
     show yuri at f11 
     y pani om "No! I-{nw}"
     show yuri dist cm oe at t11
+    play music t9
     "Yuri pauses as she averts her gaze."
     y ce om "Yes, I was cutting myself."
     show yuri cm 
@@ -2759,6 +2765,7 @@ label ys2:
     y om "I see."
     show yuri sad ce 
     "Yuri wipes some tears from her cheek, getting blood on it."
+    stop music fadeout 5
     mc "You uh… may want to go wash off in the bathroom."
     mc "We can talk about getting you some help some other time."
     y nerv om "Alright. t-t-t-thank you, [player]."
@@ -2805,6 +2812,7 @@ label ys2:
     y "I do."
     show yuri cm at t22  
     show natsuki laug ce om at f21 
+    play music t8
     n "Heh. You're so weird, Yuri!"
     show yuri om at s22  
     show natsuki cm oe neut at t21 
@@ -2988,6 +2996,7 @@ label ytp:
 label yc:
     #afternoon 
     scene bg bedroom with fade 
+    play music t2 
     pause 1.5
     "It's a bright new day."
     "The sun is shining through the windows, and I texted Yuri and she agreed to come over this afternoon."
@@ -3021,6 +3030,8 @@ label yc:
     y "Ah, yes, a human bonding exercise."
     show yuri cm at t11 
     mc "Exactly."
+    stop music fadeout .3 
+    play music t4 
     scene bg rr with fade 
     "Ah, here we are at this nondescript upscale cafe."
     "It definitely isn't a fast food restaurant that the developers were too lazy to grab a new background for to replace."
@@ -3077,7 +3088,7 @@ label yc:
     y "Steak, please."
     show yuri lsur oe cm 
     w "And how would you like that cooked?"
-    window hide 
+    window hide stop music fadeout 3 
     pause 3 
     scene bg house_night with fade 
     #long pause and fade to lack because I can't be fucked to continue this scene
@@ -3115,12 +3126,15 @@ label yc:
 label yend:
     scene fountain with fade 
     #"It's a nice afternoon, the air is fresh and my balls are fresher."
+    play music t6 
     "It's a nice, post club afternoon."
     show yuri turned neut cm e1b book at t11
     "I notice Yuri is reading her painting thing on the edge of the fountain."
     "Before I can call out to her, another guy does."
     "He seems familiar..."
     "What scene was he from again?"
+    stop music
+    play music t7
     b "Hey, freak!"
     "Yuri shows no reaction, likely because she has been consumed by the contents of her book."
     b "I'm talking to you!"
@@ -3160,6 +3174,7 @@ label yend:
     show sayori curi cm at t11
     mc "Hold on. I think I'm forgetting something."
     pause 1.5 
+    stop music 
     "Right!"
     scene black with wipeleft  
     "I leave the room."
@@ -3282,6 +3297,7 @@ label yend:
             y happ om "Thank you, [player]."
             show yuri cm 
             mc "So did you want to call it a day or…"
+            play music t10
             y neut om "We could finish {i}Portrait of Markov{/i}."
             y pani "I-i-i-i-i-if you want to!"
             show yuri happ ce cm 
@@ -3289,6 +3305,7 @@ label yend:
             show yuri om 
             y "Lovely."
             show yuri cm 
+            stop music 50
             "We lay on a log and begin reading."
             "Hours pass."
             show layer master:
@@ -3311,6 +3328,7 @@ label yend:
             "A never ending cycle of words that have lost their color."
             "There is no escape from the grip of this monotunous tome of wisdom."
             "We're stuck here. Forever."
+            stop music
             show layer master at vpunch 
             show sayori turned casual happ ce om rup ldown at face
 

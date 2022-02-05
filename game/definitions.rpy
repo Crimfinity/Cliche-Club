@@ -24,8 +24,9 @@ image vending = "mod_assets/vending.jpg"
 image tea = "mod_assets/tea.png"
 image tea2 = "mod_assets/tea2.png"
 
-
-
+image obj1 = "mod_assets/obj1.png"
+image obj2 = "mod_assets/obj2.png"
+image obj3 = "mod_assets/obj3.png"
 
 
 
